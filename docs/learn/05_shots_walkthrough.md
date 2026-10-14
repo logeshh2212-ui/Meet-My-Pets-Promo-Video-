@@ -44,6 +44,9 @@ const w = new Widget(img, [x, y, w, h], { radius, key, scale, at });
 - `pawTrail(...)`: paw prints that walk across the frame.
 - `FACES`: where Bubbly's and Lily's faces are in the Figma exports.
 
+### `_pets.ts`: the community's other pets
+`PETS` lists the other dogs (name, breed, age, photo file, crop). `feedPost()` draws a feed post in the app's style for the S04 wall, and `drawCover()` fills a card with a photo crop for the S05 ring. One list means **no dog repeats** next to itself.
+
 ### `_world.ts`: the world per act
 A soft gradient backdrop, 14–22 blurred paw/loop shapes floating in depth (they always face the camera, so camera moves show **parallax**), a **shadow-catching floor**, and a key light with soft shadows.
 
@@ -60,11 +63,11 @@ Each shot is one bar (3.311 s). Inside, things happen on beats (0, 0.83, 1.66, 2
 | **S02 Sign in** | [`film-s02.ts`](../../app/src/scenes/film-s02.ts) | a **giant keyboard**; the email and password type with keys lighting; the Login press → spinner → red burst | `Keyboard`, widgets cut from *Login Page*, `currentKey(lt)` keeps keys, text and paws in sync |
 | **S03 Your pet** | [`film-s03.ts`](../../app/src/scenes/film-s03.ts) | the red shrinks into the location button; a pin drops; a **polaroid desk**: polaroid, collar tag stamped "Bubbly", Female, trait blocks raining, a medal filling | objects lying on the floor plane (`rotation.x = -π/2`), a `bounce()` easing, `drawKeyed` per state |
 | **S04 Feed** | [`film-s04.ts`](../../app/src/scenes/film-s04.ts) | an **endless scroll wall** decelerates onto Lily's post; it pops out; a **3D heart** (extruded `THREE.Shape`) bursts; 111 → 112; Follow → Following | cheap thumbnail textures for the wall, a modulo wrap for "endless", rail buttons as child widgets |
-| **S05 Discover** | [`film-s05.ts`](../../app/src/scenes/film-s05.ts) | a **carousel ring** of cards; Max is flicked away with ✕, Lily gets the ♥ | cards on a circle (`sin`/`cos`), the ring angle as a function of time |
+| **S05 Discover** | [`film-s05.ts`](../../app/src/scenes/film-s05.ts) | a **carousel ring** of cards; Max is flicked away with ✕, Lily gets the ♥; every card is a different dog (`_pets.ts`) | cards on a circle (`sin`/`cos`), the ring angle as a function of time |
 | **S06 Match** | [`film-s06.ts`](../../app/src/scenes/film-s06.ts) | **face to face**: the stickers shoot their loops, which lock; flash, hearts, the match screen, a notification; Chat Now swells red | 2D loops placed at the projected sticker positions, `globalCompositeOperation = 'lighter'` for the glow |
 | **S07 Chat** | [`film-s07.ts`](../../app/src/scenes/film-s07.ts) | **conversation in the air**: typing on a keyboard, the bubble arcs to Lily, typing dots, her reply arcs back | arcs = `lerp` + `sin(πk)` for the height |
 | **S08 Everything** | [`film-s08.ts`](../../app/src/scenes/film-s08.ts) | one word and one feature per beat on coral; everything swirls into a point | stronger `punch`, per-beat `setWorld` |
-| **S09 End** | [`film-s09.ts`](../../app/src/scenes/film-s09.ts) | the loops slam into the woven logo on the final hit; wordmark, tagline, Coming soon; hold | 2D only; the logo SVG as an image |
+| **S09 End** | [`film-s09.ts`](../../app/src/scenes/film-s09.ts) | the loops slam into the woven logo on the final hit; wordmark, "The Social App for Every Pet", a red **Download now** button; hold | 2D only; the logo SVG as an image |
 
 **Transitions are designed, not default.** Each shot's ending hands over to the next: S02's red burst → S03's red shrinking into a button; S06's red swell → S07's red wipe; S08's white flash → S09.
 

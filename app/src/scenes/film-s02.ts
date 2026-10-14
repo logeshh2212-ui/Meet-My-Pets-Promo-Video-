@@ -1,5 +1,5 @@
 // S02 · Sign in (one bar, 3.311–6.622 s). "Keyboard world": no phone. A giant keyboard lies across the
-// floor; the Login card's pieces float above it as thick slabs (the mascot, the logo and "Welcome" behind).
+// floor; the Login card's pieces float above it as thick slabs (the mascot, the app logo and "Welcome" behind).
 //   0.00  the camera skims low across the keys; the pieces arrive from the depth
 //   0.25  the email types: each letter's key lights as a paw presses it; the field fills in
 //   1.25  a whip up to the password: keys flash, dots appear
@@ -10,7 +10,7 @@ import { W, H } from '../engine/gl';
 import { F, font, measure } from '../engine/type';
 import { clamp, ease, lerp, prog } from '../engine/util';
 import { Widget, drawPawTap, typed, type Rect } from './_ui';
-import { Keyboard } from './_kit';
+import { Keyboard, src } from './_kit';
 import { C, Shot, bump } from './_shot';
 import { castShadows } from './_world';
 
@@ -34,7 +34,12 @@ export default class SignIn extends Shot {
       this.stage.scene.add(w.group);
     };
     add('mascot', [128, 36, 140, 94], { key: PAGE }, false);
-    add('logo', [155, 139, 85, 83], { key: CARD }, false);
+    // the app logo (the double-loop mark), drawn on a transparent canvas the size of the old logo spot
+    const mark = await this.img('assets/brand/mmp_mark.svg');
+    if (mark) {
+      this.w.logo = new Widget(src(85, 83, (c) => c.drawImage(mark, 3.5, 2.5, 78, 78)), [0, 0, 85, 83], { scale: 4 });
+      this.stage.scene.add(this.w.logo.group);
+    }
     add('welcome', [112, 222, 170, 38], { key: CARD }, false);
     add('email', [31, 344, 332, 44], { radius: 22 }, true);
     add('password', [31, 432, 332, 44], { radius: 22 }, true);

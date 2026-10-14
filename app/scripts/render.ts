@@ -49,7 +49,8 @@ async function ensureServer(): Promise<{ url: string; stop: () => void }> {
   return { url: u, stop: () => { if (process.platform === 'win32') Bun.spawnSync(['taskkill', '/T', '/F', '/PID', String(proc.pid)]); else proc.kill(); } };
 }
 
-async function openPage(url: string) {
+/** `onGpuLost`: called if the page's WebGL context is lost (a GPU reset): every frame after it is broken. */
+async function openPage(url: string, onGpuLost?: (why: string) => void) {
   const browser = await chromium.launch({
     channel: 'chrome',
     headless: !flag('headed'),
@@ -59,7 +60,11 @@ async function openPage(url: string) {
   });
   const page = await browser.newPage({ viewport: { width: LW, height: LH }, deviceScaleFactor: 1 });
   const logs: string[] = [];
-  page.on('console', (m) => { if (m.type() === 'error' || m.type() === 'warning') logs.push(`[${m.type()}] ${m.text()}`); });
+  page.on('console', (m) => {
+    if (m.type() === 'error' || m.type() === 'warning') logs.push(`[${m.type()}] ${m.text()}`);
+    if (/CONTEXT_LOST/.test(m.text())) onGpuLost?.(m.text());
+  });
+  page.on('crash', () => onGpuLost?.('the page crashed'));
   page.on('pageerror', (e) => logs.push(`[pageerror] ${e.message}`));
   const only = opt('only');
   await page.goto(`${url}/?export=1${only ? `&only=${only}` : ''}${SCALE !== 1 ? `&scale=${SCALE}` : ''}`);
@@ -244,7 +249,9 @@ async function video(url: string, from: number, to: number, fps: number, out: st
   };
   let ok = false;
   try {
-    const opened = await Promise.allSettled(Array.from({ length: workers }, () => openPage(url)));
+    // a worker whose GPU context is lost would quietly send broken frames (no backdrop, patchy tiles): stop instead
+    const gpuLost = (why: string) => fail(new Error(`a worker lost its GPU context, its frames would be broken (${why}); render again`));
+    const opened = await Promise.allSettled(Array.from({ length: workers }, () => openPage(url, gpuLost)));
     for (const o of opened) if (o.status === 'fulfilled') pages.push(o.value);
     for (const o of opened) if (o.status === 'rejected') throw o.reason;
     const rendering = Promise.all(pages.map(async ({ page }, k) => {

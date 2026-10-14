@@ -2,7 +2,7 @@
 //   0.00  out of the white flash, Bubbly's coral loop and Lily's amber loop slam together on the final hit
 //   0.15  they become the woven logo (mmp_mark_film.svg)
 //   0.83  "MeetMyPets." writes itself (Love Ya Like A Sister)
-//   1.24  "Their social life starts here."     1.66  the "Coming soon" pill
+//   1.24  "The Social App for Every Pet"     1.66  the "Download now" button
 //   then the frame holds, still, to the last frame (the music has faded by ~2.8 s)
 import type { Frame } from '../engine/scene';
 import { W, H } from '../engine/gl';
@@ -62,18 +62,21 @@ export default class End extends Shot {
     if (kt > 0) {
       c.globalAlpha = kt;
       c.font = font(F.brandBody(400), 42); c.fillStyle = C.grey; c.textAlign = 'center';
-      c.fillText('Their social life starts here.', cx, H * 0.745 + (1 - kt) * 16);
+      c.fillText('The Social App for Every Pet', cx, H * 0.745 + (1 - kt) * 16);
       c.globalAlpha = 1; c.textAlign = 'left';
     }
     const kb = ease.outBack(prog(lt, 2 * BEAT, 2 * BEAT + 0.4));
     if (kb > 0) {
-      const label = 'Coming soon', fb = F.brandBody(600), w = measure(label, fb, 34) + 80, h = 72;
+      const label = 'Download now', fb = F.brandBody(600), w = measure(label, fb, 34) + 80, h = 72;
       c.save();
       c.translate(cx, H * 0.85); c.scale(kb, kb);
       c.globalAlpha = clamp(kb);
-      c.lineWidth = 3; c.strokeStyle = C.red;
-      c.beginPath(); c.roundRect(-w / 2, -h / 2, w, h, h / 2); c.stroke();
-      c.font = font(fb, 34); c.fillStyle = C.red; c.textAlign = 'center'; c.textBaseline = 'middle';
+      // a filled call-to-action button (the app's red), with a soft glow
+      c.shadowColor = 'rgba(255,23,68,0.35)'; c.shadowBlur = 24; c.shadowOffsetY = 6;
+      c.fillStyle = C.red;
+      c.beginPath(); c.roundRect(-w / 2, -h / 2, w, h, h / 2); c.fill();
+      c.shadowColor = 'transparent';
+      c.font = font(fb, 34); c.fillStyle = '#FFFFFF'; c.textAlign = 'center'; c.textBaseline = 'middle';
       c.fillText(label, 0, 2);
       c.restore();
     }

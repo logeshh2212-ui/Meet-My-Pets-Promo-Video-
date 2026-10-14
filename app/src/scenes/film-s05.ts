@@ -4,14 +4,16 @@
 //   0.86  paw-tap ✕: Max's card is flicked out of the ring, spinning away
 //   1.60  the ring turns on to Lily's card
 //   2.52  paw-tap ♥: a heart stamps on her card; it rushes the camera (into the match)
-// Lily's card is cut from "Discover page.png"; Max's is built from the labrador photo in "Discover page (1).png".
+// Lily's card is cut from "Discover page.png"; Max's is built from the labrador photo in "Discover page (1).png";
+// the others are the community's pets (_pets.ts), so every card in the ring is a different dog.
 import type { Frame } from '../engine/scene';
-import { F, font } from '../engine/type';
+import { F, font, measure } from '../engine/type';
 import { clamp, ease, lerp, prog } from '../engine/util';
 import { Widget, drawPawTap } from './_ui';
 import { src } from './_kit';
 import { C, Shot, THREE, bump } from './_shot';
 import { drawHeart } from './film-s04';
+import { PETS, drawCover } from './_pets';
 
 const T = { pass: 0.86, like: 2.52 };
 const N = 6, R = 1.55, CENTER = new THREE.Vector3(0.62, 0, -1.55);
@@ -27,7 +29,8 @@ export default class Discover extends Shot {
     const petCard = (name: string, info: string, photo: (c: CanvasRenderingContext2D) => void) => new Widget(src(345, 499, (c) => {
       c.save(); c.beginPath(); c.roundRect(0, 0, 345, 499, 30); c.clip(); photo(c); c.restore();
       c.fillStyle = 'rgba(255,255,255,0.22)'; c.strokeStyle = 'rgba(255,255,255,0.5)'; c.lineWidth = 1;
-      c.beginPath(); c.roundRect(11, 11, 176, 62, 31); c.fill(); c.stroke();
+      const pill = Math.max(176, measure(info, F.brandBody(400), 11.5) + 36); // wide enough for long breeds
+      c.beginPath(); c.roundRect(11, 11, pill, 62, 31); c.fill(); c.stroke();
       c.fillStyle = '#FFFFFF'; c.font = font(F.brandDisplay(700), 25); c.fillText(name, 26, 42);
       c.font = font(F.brandBody(400), 11.5); c.fillText(info, 26, 61);
       c.drawImage(disc, 34 * 4, 639 * 4, 326 * 4, 56 * 4, 9, 432, 326, 56);
@@ -40,15 +43,22 @@ export default class Discover extends Shot {
       c.drawImage(lab, 60, sy, sw, sh, (345 - sw * s) / 2, (499 - sh * s) / 2, sw * s, sh * s);
       c.restore();
     };
+    const photos = new Map<string, HTMLImageElement | null>();
+    for (const p of PETS) if (!photos.has(p.file)) photos.set(p.file, await this.img(p.file));
+    const petPhoto = (name: string) => (c: CanvasRenderingContext2D) => {
+      const p = PETS.find((q) => q.name === name)!, im = photos.get(p.file);
+      if (im) drawCover(c, im, p.crop, 0, 0, 345, 499);
+    };
+    const info = (name: string) => { const p = PETS.find((q) => q.name === name)!; return `•  ${p.breed}   •  ${p.age}`; };
     const lily = new Widget(disc, [25, 207, 345, 499], { radius: 30 }).slab(0.03);
     // the ring: Max (front first), Lily (next), then more pets round the back
     this.cards = [
       petCard('Max', '•  Labrador   •  3 yrs', labPhoto(470, false)),
       lily,
-      petCard('Rocky', '•  Labrador   •  5 yrs', labPhoto(470, true)),
-      petCard('Coco', '•  Retriever   •  2 yrs', labPhoto(520, true)),
-      petCard('Milo', '•  Mixed   •  1 yr', labPhoto(520, false)),
-      petCard('Daisy', '•  Labrador   •  4 yrs', labPhoto(440, true)),
+      petCard('Rocky', info('Rocky'), petPhoto('Rocky')),
+      petCard('Coco', info('Coco'), petPhoto('Coco')),
+      petCard('Milo', info('Milo'), petPhoto('Milo')),
+      petCard('Daisy', info('Daisy'), petPhoto('Daisy')),
     ];
     for (const c of this.cards) this.ring.add(c.group);
     this.ring.position.copy(CENTER);

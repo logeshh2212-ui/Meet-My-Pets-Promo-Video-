@@ -6,13 +6,15 @@
 //         the rail heart fills red and 111 rolls to 112
 //   1.70  paw-tap "Follow": "Following"
 //   2.55  the post sinks back and the wall flicks away upward
-// Posts are cut from the Figma exports ("Feed page.png": Lily's post; "Discover page (1).png", "Discover page.png").
+// Lily's post is cut from "Feed page.png"; the wall is the labrador post from "Discover page (1).png" plus a
+// post for each of the other pets (_pets.ts), so no dog appears twice side by side and Lily only once.
 import type { Frame } from '../engine/scene';
 import { W, H } from '../engine/gl';
 import { F, font } from '../engine/type';
 import { ease, lerp, prog } from '../engine/util';
 import { UNIT, Widget, drawPawTap, type Rect } from './_ui';
 import { C, Shot, THREE, bump } from './_shot';
+import { PETS, feedPost } from './_pets';
 
 const POST: Rect = [24, 104, 345, 516];
 const T = { like1: 0.95, like2: 1.08, follow: 1.72 };
@@ -37,10 +39,15 @@ export default class Feed extends Shot {
 
   async setup() {
     this.makeWorld('feed', { center: [0.35, 0, -0.5], seed: 5 });
-    const [lab, feed, disc] = await Promise.all([this.img(this.shot.screen_asset?.[0] ?? ''), this.img(this.shot.screen_asset?.[1] ?? ''), this.img('assets/figma/Discover page.png')]);
+    const [lab, feed] = await Promise.all([this.img(this.shot.screen_asset?.[0] ?? ''), this.img(this.shot.screen_asset?.[1] ?? '')]);
     if (!feed) return;
-    // the wall: rows of posts in three columns (the centre one of row 0 is Lily's, the hero)
-    const sources = [lab && thumb(lab, [24, 183, 345, 516]), thumb(feed, POST), disc && thumb(disc, [25, 207, 345, 499])].filter(Boolean) as HTMLCanvasElement[];
+    const photos = new Map<string, HTMLImageElement | null>();
+    for (const p of PETS) if (!photos.has(p.file)) photos.set(p.file, await this.img(p.file));
+    // the wall: rows of posts in three columns (the centre one of row 0 is Lily's, the hero).
+    // 7 different posts: with 3 columns, neighbours (left/right and up/down) are always different dogs.
+    const sources = [lab && thumb(lab, [24, 183, 345, 516]),
+      ...PETS.map((p, i) => { const im = photos.get(p.file); return im ? feedPost(im, p, [86, 214, 47, 132, 309, 65][i]!) : null; })]
+      .filter(Boolean) as HTMLCanvasElement[];
     for (let row = -ROWS; row <= ROWS; row++) for (let col = 0; col < 3; col++) {
       if (row === 0 && col === 1) continue;
       const cv = sources[(row * 3 + col + 30) % sources.length]!;
