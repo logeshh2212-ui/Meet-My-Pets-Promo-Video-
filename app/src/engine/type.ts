@@ -10,7 +10,7 @@ export const ARCHIVO_WIDTHS = [620, 750, 875, 1000, 1125, 1250] as const;
 export const ARCHIVO_WEIGHTS = [300, 500, 700, 900] as const;
 
 /** `features`: OpenType features switched on for the face (Canvas2D has no font-feature-settings). */
-type FontDef = { family: string; file: string; features?: string };
+type FontDef = { family: string; file: string; features?: string; optional?: boolean };
 const DEFS: FontDef[] = [];
 for (const w of ARCHIVO_WIDTHS) for (const wt of ARCHIVO_WEIGHTS) DEFS.push({ family: `Archivo-${w}-${wt}`, file: `Archivo-w${w}-${wt}.ttf` });
 for (const w of [750, 1000]) for (const wt of [400, 800]) DEFS.push({ family: `ArchivoItalic-${w}-${wt}`, file: `ArchivoItalic-w${w}-${wt}.ttf` });
@@ -22,6 +22,16 @@ for (const wt of [400, 600]) {
 for (const [n, f] of [['300', 'Light'], ['400', 'Regular'], ['500', 'Medium'], ['600', 'SemiBold'], ['700', 'Bold']] as const)
   DEFS.push({ family: `Plex-${n}`, file: `src/IBMPlexMono-${f}.ttf` });
 DEFS.push({ family: 'PlexItalic-400', file: 'src/IBMPlexMono-Italic.ttf' });
+// MeetMyPets brand fonts (optional: until the files are in public/fonts the brand helpers fall back to Archivo).
+// The app's own type: Bricolage Grotesque (headings) and Nunito Sans (body); the film's wordmark: Love Ya Like A Sister.
+for (const [family, file] of [
+  ['Bricolage-700', 'BricolageGrotesque-Bold.ttf'], ['Bricolage-600', 'BricolageGrotesque-SemiBold.ttf'],
+  ['Nunito-400', 'NunitoSans-Regular.ttf'], ['Nunito-600', 'NunitoSans-SemiBold.ttf'],
+  ['LoveYa', 'LoveYaLikeASister-Regular.ttf'],
+] as const) DEFS.push({ family, file, optional: true });
+
+/** Families whose font file loaded (optional fonts may be missing). */
+export const LOADED = new Set<string>();
 
 /** Convenience family names. */
 export const F = {
@@ -33,6 +43,20 @@ export const F = {
   },
   archivoItalic(width = 100, weight = 800): string {
     return `ArchivoItalic-${width < 88 ? 750 : 1000}-${weight < 600 ? 400 : 800}`;
+  },
+  /** MeetMyPets headings (the app's Bricolage Grotesque), falling back to Archivo. */
+  brandDisplay(weight = 700): string {
+    const f = weight < 650 ? 'Bricolage-600' : 'Bricolage-700';
+    return LOADED.has(f) ? f : F.archivo(100, weight);
+  },
+  /** MeetMyPets body text (the app's Nunito Sans), falling back to Archivo. */
+  brandBody(weight = 400): string {
+    const f = weight < 500 ? 'Nunito-400' : 'Nunito-600';
+    return LOADED.has(f) ? f : F.archivo(100, weight < 500 ? 300 : 500);
+  },
+  /** The film's "MeetMyPets." wordmark (Love Ya Like A Sister), falling back to Archivo. */
+  wordmark(): string {
+    return LOADED.has('LoveYa') ? 'LoveYa' : F.archivo(100, 700);
   },
   serif(weight = 400, italic = false): string {
     return `${italic ? 'CormorantItalic' : 'Cormorant'}-${weight < 500 ? 400 : 600}`;
@@ -58,11 +82,17 @@ const bufCache = new Map<string, ArrayBuffer>();
 export async function loadFonts(): Promise<void> {
   await Promise.all(
     DEFS.map(async (d) => {
-      const buf = await (await fetch(`fonts/${d.file}`)).arrayBuffer();
+      const res = await fetch(`fonts/${d.file}`);
+      if (!res.ok || (res.headers.get('content-type') ?? '').includes('text/html')) {
+        if (d.optional) return; // not added yet: the brand helpers fall back to Archivo
+        throw new Error(`font missing: public/fonts/${d.file}`);
+      }
+      const buf = await res.arrayBuffer();
       bufCache.set(d.family, buf);
       const ff = new FontFace(d.family, buf, d.features ? { featureSettings: d.features } : undefined);
       await ff.load();
       document.fonts.add(ff);
+      LOADED.add(d.family);
     }),
   );
   await document.fonts.ready;

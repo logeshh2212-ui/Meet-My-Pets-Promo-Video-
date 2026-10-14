@@ -9,7 +9,7 @@ const ONLY = params.get('only'); // comma-separated scene ids to load (faster st
 const FROM = params.get('t') ? parseFloat(params.get('t')!) : null;
 
 const canvas = document.getElementById('c') as HTMLCanvasElement;
-// physical size: 1920x1080 times ?scale= (the page CSS keeps showing it at 1920x1080)
+// physical size: 1920x1080 (16:9) times ?scale= (the page CSS keeps showing it at 1920x1080)
 canvas.width = PW;
 canvas.height = PH;
 
@@ -148,7 +148,7 @@ function setupExport() {
 
 // ------------------------------------------------------------------ preview player
 function setupPlayer() {
-  const audio = new Audio('audio/pdoom.mp3');
+  const audio = new Audio('audio/track.mp3');
   audio.preload = 'auto';
   const ui = document.getElementById('ui')!;
   const scrub = document.getElementById('scrub') as HTMLInputElement;
@@ -222,7 +222,8 @@ function setupPlayer() {
     import.meta.hot.on('vite:afterUpdate', (payload: any) => {
       for (const u of payload.updates ?? []) {
         const m = /scenes\/([\w-]+)\.ts/.exec(u.path ?? '');
-        if (m) for (const e of TIMELINE) if (e.id === m[1] || (e as any).file === m[1]) engine.reload(e.id);
+        // a shot whose template is that file (ids are "03-feature", the template is "feature")
+        if (m) for (const e of TIMELINE) if (e.id === m[1] || e.params?.template === m[1]) engine.reload(e.id);
       }
     });
   }

@@ -1,0 +1,44 @@
+{
+  "name": "MeetMyPets Coral",
+  "palette": {
+    "ink": "#050507",
+    "ink2": "#16161A",
+    "graphite": "#3A3A3F",
+    "ash": "#9A9AA0",
+    "bone": "#F5F5F7",
+    "signal": "#F2295B",
+    "ember": "#FFB21E",
+    "blood": "#FF7A1A",
+    "acid": "#5AC8FA"
+  },
+  "type": {
+    "display": "archivo",
+    "displayWidth": 100,
+    "displayWeight": 700,
+    "label": "archivo",
+    "labelWeight": 500
+  },
+  "style": {
+    "background": "flat",
+    "gridSize": 48,
+    "lineWidth": 2,
+    "textCase": "none"
+  },
+  "motion": {
+    "ease": "outQuart",
+    "wordLead": 0.25
+  },
+  "post": {
+    "bloom": 0.25,
+    "bloomThreshold": 1.0,
+    "bloomKnee": 0.3,
+    "grain": 0.025,
+    "vignette": 0.3,
+    "ca": 0.35,
+    "halation": 0
+  },
+  "brand": {
+    "name": "MeetMyPets.",
+    "tagline": "Their social life starts here."
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Meet My Pets - cinematic launch film",
+  "music": { "file": "audio/music.mp3", "bpm": 120, "start": 0, "fadeOut": 2 },
+  "shots": [
+    { "template": "title", "beats": 8,
+      "kicker": "Introducing", "lines": ["Every pet", "has a story."], "accent": "story." },
+
+    { "template": "hero", "beats": 10, "transitionBeats": 1, "transitionType": "zoom",
+      "move": "reveal", "side": "right", "screens": ["assets/home.png"],
+      "kicker": "Meet My Pets", "lines": ["All your pets.", "One home."], "accent": "home.",
+      "sub": "The app that keeps every part of their life together." },
+
+    { "template": "feature", "beats": 8, "transitionBeats": 0.5, "transitionType": "whip",
+      "side": "left", "move": "orbit", "screens": ["assets/profile.png"], "focus": [0.06, 0.395, 0.88, 0.12],
+      "kicker": "Profiles", "lines": ["Every detail,", "beautifully kept."], "accent": "beautifully",
+      "sub": "Photos, birthdays, breeds and quirks, all in one place." },
+
+    { "template": "feature", "beats": 8, "transitionBeats": 0.5, "transitionType": "whip",
+      "side": "right", "move": "orbit", "screens": ["assets/reminders.png"], "focus": [0.06, 0.178, 0.88, 0.105],
+      "kicker": "Reminders", "lines": ["Never miss", "a walk."], "accent": "walk.",
+      "sub": "Gentle nudges for walks, meals and medicine." },
+
+    { "template": "feature", "beats": 8, "transitionBeats": 0.5, "transitionType": "whip",
+      "side": "left", "move": "push", "screens": ["assets/health.png"], "focus": [0.06, 0.178, 0.88, 0.255],
+      "kicker": "Health", "lines": ["Their health,", "at a glance."], "accent": "glance.",
+      "sub": "Vaccines, vet visits and weight, tracked for you." },
+
+    { "template": "lineup", "beats": 8, "transitionBeats": 1, "transitionType": "zoom",
+      "screens": ["assets/profile.png", "assets/home.png", "assets/health.png"],
+      "kicker": "All in one place", "lines": ["Everything they need."], "accent": "need." },
+
+    { "template": "title", "beats": 6, "transitionBeats": 0.5, "transitionType": "flash",
+      "lines": ["Made for the ones", "who love them most."], "accent": "love" },
+
+    { "template": "logo", "beats": 9, "transitionBeats": 1, "transitionType": "dip",
+      "logo": "assets/logo.png", "note": "Coming soon on iOS and Android" }
+  ]
+}

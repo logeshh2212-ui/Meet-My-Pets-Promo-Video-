@@ -24,7 +24,13 @@ export interface TimelineEntry {
   params?: Record<string, any>;
   /** Cap on adaptive motion-blur sub-frames while this entry is on screen (for noise that converges slowly). */
   maxSamples?: number;
+  /** How this entry comes in over the previous one during their overlap (default 'fade'). */
+  transition?: TransitionType;
 }
+
+/** Transition styles of the engine's default overlap compositing (see TRANSITION_MODES). */
+export type TransitionType = 'fade' | 'zoom' | 'whip' | 'dip' | 'flash';
+const TRANSITION_MODES: Record<TransitionType, number> = { fade: 0, zoom: 1, whip: 2, dip: 3, flash: 4 };
 
 interface Loaded { entry: TimelineEntry; scene: Scene | null; error?: string; lastT: number }
 
@@ -127,8 +133,43 @@ export class Engine {
     this.renderer.setSize(PW, PH, false);
     this.renderer.autoClear = false;
     this.blit = new FSPass(`uniform sampler2D src; void main(){ fragColor = texture(src, vUv); }`, { src: { value: null } });
-    this.xfade = new FSPass(`uniform sampler2D a; uniform sampler2D b; uniform float k;
-      void main(){ fragColor = mix(texture(a, vUv), texture(b, vUv), k); }`, { a: { value: null }, b: { value: null }, k: { value: 0 } });
+    // overlap compositing: a = the outgoing picture, b = the incoming one, k = 0..1 through the overlap
+    this.xfade = new FSPass(/* glsl */ `uniform sampler2D a; uniform sampler2D b; uniform float k; uniform int mode;
+      // whip: both pictures slide left as one strip (a, then b to its right)
+      vec4 strip(vec2 uv) { return uv.x < 1.0 ? texture(a, uv) : texture(b, vec2(uv.x - 1.0, uv.y)); }
+      void main() {
+        float e = k * k * (3.0 - 2.0 * k);
+        if (mode == 1) {
+          // zoom: the old picture pushes in and blurs away, the new one settles from slightly large
+          vec2 c = vUv - 0.5;
+          vec4 A = vec4(0.0), B = vec4(0.0);
+          for (int i = 0; i < 12; i++) {
+            float f = float(i) / 11.0;
+            A += texture(a, 0.5 + c / (1.0 + 0.45 * e) * (1.0 - 0.10 * e * f));
+            B += texture(b, 0.5 + c / (1.0 + 0.15 * (1.0 - e)) * (1.0 - 0.06 * (1.0 - e) * f));
+          }
+          fragColor = mix(A / 12.0, B / 12.0, smoothstep(0.2, 0.8, k));
+        } else if (mode == 2) {
+          // whip pan: fast slide with motion blur that peaks mid-move
+          float s = k < 0.5 ? 2.0 * k * k : 1.0 - 2.0 * (1.0 - k) * (1.0 - k);
+          float blur = 0.22 * sin(PI * k);
+          // 32 samples along the motion, each pixel's set shifted by a random fraction of a step:
+          // a smooth streak instead of stepped copies (the leftover noise hides in the film grain)
+          float jit = hash12(gl_FragCoord.xy) / 32.0;
+          vec4 acc = vec4(0.0);
+          for (int i = 0; i < 32; i++) acc += strip(vec2(vUv.x + s + blur * (float(i) / 32.0 + jit - 0.5), vUv.y));
+          fragColor = acc / 32.0;
+        } else if (mode == 3) {
+          // dip: down to black, then up into the new picture
+          fragColor = k < 0.5 ? texture(a, vUv) * (1.0 - smoothstep(0.0, 0.5, k)) : texture(b, vUv) * smoothstep(0.5, 1.0, k);
+        } else if (mode == 4) {
+          // flash: a bright burst (bloom makes it glow) that hides the cut
+          float f = pow(sin(PI * k), 3.0);
+          fragColor = mix(texture(a, vUv), texture(b, vUv), smoothstep(0.35, 0.65, k)) + vec4(C_BONE * 0.45 * f, 0.0);
+        } else {
+          fragColor = mix(texture(a, vUv), texture(b, vUv), e);
+        }
+      }`, { a: { value: null }, b: { value: null }, k: { value: 0 }, mode: { value: 0 } });
     // adds a sub-frame to a sum; a non-finite pixel (a stray NaN from some shader in one sub-frame out of
     // hundreds) is dropped, or it would poison the average and bloom into a disc
     this.accum = new FSPass(`uniform sampler2D src;
@@ -593,6 +634,7 @@ export class Engine {
         this.xfade.u.a!.value = under;
         this.xfade.u.b!.value = rt.texture;
         this.xfade.u.k!.value = tin;
+        this.xfade.u.mode!.value = TRANSITION_MODES[e.transition ?? 'fade'] ?? 0;
         this.xfade.render(r, this.mixRT);
         outTex = this.mixRT.texture;
       } else outTex = rt.texture;

@@ -1,0 +1,36 @@
+{
+  "title": "Meet My Pets - launch film (test cut)",
+  "shots": [
+    { "template": "type", "duration": 3, "lines": ["Every pet", "has a story."] },
+
+    { "template": "type", "duration": 3, "transition": 0.5, "lines": ["Meet My Pets."], "accent": "Pets." },
+
+    { "template": "type", "duration": 3.5, "transition": 0,
+      "lines": ["Walks.", "Meals.", "Vet visits."], "accent": "Meals.", "sub": "All in one place." },
+
+    { "template": "phone", "duration": 5, "transition": 0.5, "image": "assets/home.png",
+      "title": "All your pets.", "sub": "One beautiful home.", "side": "right" },
+
+    { "template": "phone", "duration": 5, "transition": 1,
+      "title": "Never miss a walk.", "sub": "Smart reminders for every pet.", "side": "left" },
+
+    { "template": "features", "duration": 6, "transition": 0.5, "heading": "Made for pet people.", "items": [
+      { "title": "Profiles", "text": "Photos, birthdays and quirks." },
+      { "title": "Reminders", "text": "Walks, meals and vet visits." },
+      { "title": "Friends", "text": "Share with family and sitters." }
+    ] },
+
+    { "template": "features", "duration": 6, "transition": 0.5, "heading": "And there's more.", "items": [
+      { "title": "Health", "text": "Vaccines, weight and medication history, with a reminder before every booster is due." },
+      { "title": "Journal", "text": "Daily notes and photos." },
+      { "title": "Sitters", "text": "One link with everything." },
+      { "title": "Lost pet", "text": "Alert nearby users fast." },
+      { "title": "Hidden", "text": "A fifth card. It should not appear." }
+    ] },
+
+    { "template": "type", "duration": 3.5, "transition": 0.5,
+      "lines": ["Built for dog people, cat people and everyone in between."] },
+
+    { "template": "endcard", "duration": 4.5, "transition": 0.5, "note": "Coming soon on iOS and Android" }
+  ]
+}

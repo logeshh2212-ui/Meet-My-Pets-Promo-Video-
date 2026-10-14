@@ -1,8 +1,9 @@
 import { hexToLinear } from './util';
+import theme from '../theme.json';
 
 // The whole video lives in a restrained palette: ink, bone, and one signal colour.
 // One rare accent (acid, the shrooms moment) — see docs/TREATMENT.md.
-export const HEX = {
+const DEFAULT_HEX = {
   ink: '#0A0A0B', // background black (slightly warm)
   ink2: '#151517', // raised black (panels, paper-in-the-dark)
   graphite: '#5E5B57', // dim lines, secondary text
@@ -13,6 +14,9 @@ export const HEX = {
   blood: '#C21D0B', // deep red-orange for shadows of signal
   acid: '#D8FF3C', // acid: only for the shrooms moment
 } as const;
+
+// theme.json overrides any of the colours above (same keys); the rest keep their defaults
+export const HEX: Record<keyof typeof DEFAULT_HEX, string> = { ...DEFAULT_HEX, ...theme.palette };
 
 export type PaletteKey = keyof typeof HEX;
 

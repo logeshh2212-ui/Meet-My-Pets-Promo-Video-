@@ -1,0 +1,47 @@
+{
+  "title": "MeetMyPets - The Social Life They Deserve",
+  "music": { "file": "audio/music.mp3", "bpm": 120, "start": 0, "fadeOut": 1.5 },
+  "shots": [
+    { "template": "photo", "beats": 5,
+      "image": "assets/shot01_dog_eye.jpg", "move": "push", "side": "left",
+      "lines": ["Every pet", "has a story."], "accent": "story.",
+      "image_prompt": "Extreme macro close-up of a real golden retriever's expressive eye, individual strands of golden fur, natural window light reflected in the eye, cinematic shallow depth of field, premium pet commercial photography, warm highlights, realistic anatomy. Horizontal 16:9 composition, the eye on the right third, soft dark negative space on the left for headline text. No text, no logos, no watermarks.",
+      "sound": "Soft piano note, subtle ambient sound" },
+
+    { "template": "photo", "beats": 5, "transitionBeats": 0.6, "transitionType": "fade",
+      "image": "assets/shot02_dogs_meeting.jpg", "move": "track", "side": "right", "valign": "top",
+      "lines": ["Their world", "is bigger", "than home."], "accent": "bigger",
+      "image_prompt": "Two real dogs meeting nose to nose in a beautiful sunlit green park, a golden retriever and a Shiba Inu, authentic curious expressions, golden-hour sunlight, realistic fur, premium lifestyle commercial, cinematic lens. Horizontal 16:9 composition, the dogs in the lower-left two thirds, soft blurred trees and sky in the upper right for headline text. No text, no logos, no watermarks.",
+      "sound": "Gentle electronic pulse begins" },
+
+    { "template": "brand", "beats": 4, "transitionBeats": 0.5, "transitionType": "flash",
+      "layout": "reveal", "name": "MeetMyPets.",
+      "sound": "Warm cinematic impact" },
+
+    { "template": "feature", "beats": 8, "transitionBeats": 0.5, "transitionType": "whip",
+      "side": "right", "move": "orbit", "background": "assets/shot06_pet_community.jpg",
+      "screens": ["assets/discover.png"], "focus": [0.05, 0.252, 0.9, 0.428],
+      "kicker": "Discover", "lines": ["Discover", "their world."], "accent": "world.",
+      "sub": "Meet pets. Share moments. Find connections.",
+      "sound": "Minimal rhythmic beat with subtle interface clicks" },
+
+    { "template": "hero", "beats": 6, "transitionBeats": 0.5, "transitionType": "whip",
+      "side": "left", "move": "push", "screens": ["assets/match.png"],
+      "taps": [{ "t": 2.4, "x": 0.5, "y": 0.72 }],
+      "kicker": "Match", "lines": ["It’s a match."], "accent": "match.",
+      "sub": "The vibe is mutual.",
+      "sound": "Soft match chime; music reaches its emotional peak" },
+
+    { "template": "photo", "beats": 6, "transitionBeats": 0.6, "transitionType": "zoom",
+      "image": "assets/shot06_pet_community.jpg", "move": "track", "side": "right", "valign": "top",
+      "lines": ["Their social life", "starts here."], "accent": ["starts", "here."],
+      "image_prompt": "Three real happy pets, a golden retriever, a Shiba Inu and a tabby cat, lying together in a sunlit green park, natural candid expressions, detailed realistic fur, cinematic shallow depth of field, warm golden-hour light, premium lifestyle campaign. Horizontal 16:9 composition, the pets across the lower left and centre, soft bokeh trees in the upper right for headline text. No text, no logos, no watermarks.",
+      "sound": "Music resolves into a warm, uplifting chord" },
+
+    { "template": "brand", "beats": 9, "transitionBeats": 0.8, "transitionType": "fade",
+      "layout": "end", "name": "MeetMyPets.",
+      "tagline": "Their social life starts here.", "line": "Discover. Connect. Belong.",
+      "badges": ["Coming soon on iOS", "Coming soon on Android"], "screens": ["assets/discover.png"],
+      "sound": "Signature soft audio logo; clean musical finish" }
+  ]
+}

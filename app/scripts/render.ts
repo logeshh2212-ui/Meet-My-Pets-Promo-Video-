@@ -4,7 +4,7 @@
 //   sheet:   bun scripts/render.ts sheet --from 20 --to 35 [--n 12] [--cols 4] [--only ids] [--out file.png]   (or --times a,b,c | --cuts)
 //   plates:  bun scripts/render.ts plates   (renders one representative JPEG per plate into public/plates/ (used by the outro's rewind), times from plates.json or entry midpoints)
 //   perf:    bun scripts/render.ts perf --from 20 --to 25 [--only ids] [--samples 1] [--shutter 0.5]   (avg ms per frame incl. GPU sync and the export's pixel readback)
-//   video:   bun scripts/render.ts video [--from 0] [--to 156.65] [--fps 60] [--crf 16] [--x264 aq-mode=3] [--samples 1] [--shutter 0.5] [--out ../out/pdoom.mp4] [--noaudio]
+//   video:   bun scripts/render.ts video [--from 0] [--to 156.65] [--fps 60] [--crf 16] [--x264 aq-mode=3] [--samples 1] [--shutter 0.5] [--out ../out/meet-my-pets.mp4] [--noaudio]
 //            [--workers 2] [--chunk 8] [--mem-gb 1] [--spool-gb 20]
 //            --samples N averages N sub-frames per frame over shutter×(1/fps): motion blur + temporal AA;
 //            --samples auto picks the count per 32x32 tile (12, 36, 108 or 324, see Engine.render; --refine frame: per frame)
@@ -23,7 +23,8 @@ const opt = (k: string, d?: string) => { const i = argv.indexOf(`--${k}`); retur
 const flag = (k: string) => argv.includes(`--${k}`);
 const APP = path.resolve(import.meta.dir, '..');
 const SCALE = Math.max(1, Math.round(+opt('scale', '1')!));
-const OW = 1920 * SCALE, OH = 1080 * SCALE; // output size
+const LW = 1920, LH = 1080; // logical frame: 16:9 wide (YouTube) (keep in sync with W/H in src/engine/gl.ts)
+const OW = LW * SCALE, OH = LH * SCALE; // output size
 // --samples N (fixed) or --samples auto [--min-samples 4] [--max-samples 324] [--tol 3] [--refine tiles|frame]
 // (adaptive, see Engine.render)
 const SAMPLES = opt('samples', '1') === 'auto'
@@ -44,16 +45,19 @@ async function ensureServer(): Promise<{ url: string; stop: () => void }> {
   const proc = Bun.spawn(['bunx', 'vite', '--port', String(port), '--strictPort'], { cwd: APP, stdout: 'ignore', stderr: 'ignore', env: { ...process.env, PDOOM_NO_HMR: '1' } });
   const u = `http://localhost:${port}`;
   for (let i = 0; i < 100 && !(await reachable(u)); i++) await Bun.sleep(100);
-  return { url: u, stop: () => proc.kill() };
+  // (on Windows `bunx vite` runs node as a child: kill the whole tree, or a vite server is left behind per run)
+  return { url: u, stop: () => { if (process.platform === 'win32') Bun.spawnSync(['taskkill', '/T', '/F', '/PID', String(proc.pid)]); else proc.kill(); } };
 }
 
 async function openPage(url: string) {
   const browser = await chromium.launch({
     channel: 'chrome',
     headless: !flag('headed'),
-    args: ['--use-angle=metal', '--enable-gpu-rasterization', '--ignore-gpu-blocklist', '--disable-background-timer-throttling', '--disable-renderer-backgrounding', '--disable-backgrounding-occluded-windows'],
+    // ANGLE backend per OS: 'metal' only exists on macOS; on Windows it silently falls back to SwiftShader
+    // (the CPU), which renders ~10x slower. d3d11 uses the real GPU there.
+    args: [process.platform === 'darwin' ? '--use-angle=metal' : process.platform === 'win32' ? '--use-angle=d3d11' : '--use-angle=default', '--enable-gpu-rasterization', '--ignore-gpu-blocklist', '--disable-background-timer-throttling', '--disable-renderer-backgrounding', '--disable-backgrounding-occluded-windows'],
   });
-  const page = await browser.newPage({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1 });
+  const page = await browser.newPage({ viewport: { width: LW, height: LH }, deviceScaleFactor: 1 });
   const logs: string[] = [];
   page.on('console', (m) => { if (m.type() === 'error' || m.type() === 'warning') logs.push(`[${m.type()}] ${m.text()}`); });
   page.on('pageerror', (e) => logs.push(`[pageerror] ${e.message}`));
@@ -62,7 +66,7 @@ async function openPage(url: string) {
   await page.waitForFunction(() => (window as any).__pdoom?.ready || (window as any).__pdoom?.error, null, { timeout: 120000 });
   const err = await page.evaluate(() => (window as any).__pdoom.error);
   if (err) throw new Error(`app failed to boot:\n${err}\n${logs.join('\n')}`);
-  const size: [number, number] = await page.evaluate(() => [(window as any).__pdoom.width ?? 1920, (window as any).__pdoom.height ?? 1080]);
+  const size: [number, number] = await page.evaluate(() => [(window as any).__pdoom.width ?? LW, (window as any).__pdoom.height ?? LH]);
   if (size[0] !== OW || size[1] !== OH) throw new Error(`app renders ${size[0]}x${size[1]}, expected ${OW}x${OH} (--scale ${SCALE})`);
   const sceneErrors: string[] = await page.evaluate(() => (window as any).__pdoom.errors);
   if (sceneErrors.length) console.error('SCENE ERRORS:\n' + sceneErrors.join('\n'));
@@ -78,7 +82,7 @@ async function stills(page: Page, times: number[], outDir: string) {
     if (typeof SAMPLES !== 'number') console.log(`t=${t}: ${k} sub-frames`);
     // at scale > 1 the canvas is shown downscaled on the page: save the full-res pixel buffer instead
     if (SCALE !== 1) await Bun.write(f, Buffer.from(await page.evaluate(() => (window as any).__pdoom.png()), 'base64'));
-    else await page.screenshot({ path: f, clip: { x: 0, y: 0, width: 1920, height: 1080 } });
+    else await page.screenshot({ path: f, clip: { x: 0, y: 0, width: LW, height: LH } });
     files.push(f);
   }
   return files;
@@ -117,7 +121,7 @@ async function sheet(page: Page, times: number[], cols: number, out: string) {
 async function video(url: string, from: number, to: number, fps: number, out: string) {
   mkdirSync(path.dirname(out), { recursive: true });
   const crf = opt('crf', '16')!;
-  const audio = path.join(ROOT, 'audio/pdoom.mp3');
+  const audio = path.join(ROOT, 'audio/track.mp3'); // written by scripts/prep.ts (music or silence)
   // (frames come as rgb24: the same YUV out of the scaler as from rgba, a quarter fewer bytes to move)
   const args = ['ffmpeg', '-y', '-loglevel', 'error', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', `${OW}x${OH}`, '-r', String(fps), '-i', 'pipe:0'];
   if (!flag('noaudio')) args.push('-ss', String(from), '-t', String(to - from), '-i', audio);
@@ -281,7 +285,7 @@ if (mode === 'video') {
     const { browser, page } = await openPage(url);
     const dur: number = await page.evaluate(() => (window as any).__pdoom.duration);
     await browser.close();
-    await video(url, +opt('from', '0')!, +opt('to', String(dur))!, +opt('fps', '60')!, path.resolve(opt('out', path.join(ROOT, 'out/pdoom.mp4'))!));
+    await video(url, +opt('from', '0')!, +opt('to', String(dur))!, +opt('fps', '60')!, path.resolve(opt('out', path.join(ROOT, 'out/meet-my-pets.mp4'))!));
   } finally { stop(); }
   process.exit(0);
 }
@@ -322,7 +326,7 @@ try {
       const t = overrides[figs[i]!] ?? (e.start + e.end) / 2;
       await page.evaluate((t) => (window as any).__pdoom.still(t, 4, 0.2), t);
       const f = path.join(dir, `fig${String(i + 1).padStart(2, '0')}.jpg`);
-      await page.screenshot({ path: f, type: 'jpeg', quality: 90, clip: { x: 0, y: 0, width: 1920, height: 1080 } });
+      await page.screenshot({ path: f, type: 'jpeg', quality: 90, clip: { x: 0, y: 0, width: LW, height: LH } });
       console.log(f, t.toFixed(2));
     }
   } else if (mode === 'perf') {

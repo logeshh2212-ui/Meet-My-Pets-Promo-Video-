@@ -1,0 +1,47 @@
+{
+  "file": "audio/testing.mp3",
+  "method": "ffmpeg decode + band-limited RMS envelopes (docs/launch-film/tools/measure_audio.py). Everything in 'measured' was read from the file; nothing is assumed from a BPM.",
+  "measured": {
+    "duration_s": 76.13825,
+    "format": "MP3, 48 kHz, stereo, 128 kb/s",
+    "silence_head": [0.0, 0.67],
+    "first_sound": 0.67,
+    "pickup_hit": 1.50,
+    "first_full_downbeat": 2.510,
+    "bar_s": 3.3110,
+    "beat_s": 0.8277,
+    "tempo_bpm": 72.49,
+    "tempo_note": "Half-time feel; equivalently ~145 BPM. The older data/audio.json value of 97 BPM was the dotted-eighth (3/16) rhythm, not the beat, and that file also has the wrong duration (76.082 s).",
+    "bar_pattern": "Every bar: beats 1-3 loud (808 + drums), beat 4 has a ~0.33 s bass gap, then the next downbeat hits.",
+    "downbeats": [2.510, 5.821, 9.132, 12.443, 15.754, 19.065, 22.376, 25.687, 28.998, 32.309, 35.620, 38.931, 42.242, 45.553, 48.864, 52.175, 55.486, 58.797, 62.108, 65.419, 68.730, 72.041],
+    "bass_gaps_before_downbeat": [[2.20, 2.51], [5.51, 5.83], [8.78, 9.14], [12.12, 12.46], [15.44, 15.76], [18.74, 19.07], [22.02, 22.38], [25.37, 25.69], [28.65, 29.00], [31.98, 32.32], [35.30, 35.63], [38.58, 38.93], [48.51, 48.86], [51.82, 52.18], [55.11, 55.49], [58.44, 58.80], [61.72, 62.11], [65.06, 65.41], [68.37, 68.72], [71.68, 72.04]],
+    "sections": [
+      {"name": "silence", "start": 0.0, "end": 0.67},
+      {"name": "intro pickup (sparse)", "start": 0.67, "end": 2.510},
+      {"name": "A: groove, darker hi-hats", "start": 2.510, "end": 12.443, "level_db": -25.5},
+      {"name": "B: groove, brighter hats on alternate bars (12.44, 19.07, 25.69, 32.31)", "start": 12.443, "end": 38.931, "level_db": -25.0},
+      {"name": "transition bar: bass drops out after beat 2 (~40.6)", "start": 38.931, "end": 42.242, "level_db": -28.4},
+      {"name": "breakdown: no bass, ~15 dB quieter, melodic hits each beat", "start": 42.242, "end": 47.21, "level_db": -41.1, "hits": [42.66, 43.49, 44.32, 45.14, 45.97]},
+      {"name": "DROP: full band returns on beat 3 of the bar", "start": 47.21, "end": 47.21},
+      {"name": "C: peak energy, brightest highs (52-65)", "start": 47.21, "end": 65.419, "level_db": -24.9},
+      {"name": "D: outro, highs thinning (-61 -> -67 dB)", "start": 65.419, "end": 72.041},
+      {"name": "final downbeat hit + decay", "start": 72.041, "end": 74.84},
+      {"name": "silence tail", "start": 74.84, "end": 76.138}
+    ],
+    "music_below_minus45db": 74.26,
+    "music_below_minus60db": 74.84
+  },
+  "recommended": {
+    "brand_reveal": 5.821,
+    "app_entry": 12.443,
+    "create_profile": [12.443, 22.376],
+    "discover": [22.376, 32.309],
+    "feed": [32.309, 42.242],
+    "like_moment": 46.381,
+    "mutual_match": 47.208,
+    "chat_now": 52.175,
+    "real_life_payoff": 62.108,
+    "product_composition": [65.419, 72.041],
+    "end_card": 72.041
+  }
+}

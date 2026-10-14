@@ -1,0 +1,81 @@
+{
+  "title": "MeetMyPets - Their Social Life Starts Here (energetic cut)",
+  "music": { "file": "audio/testing.mp3", "bpm": 97, "start": 0.06, "fadeOut": 1.5 },
+  "shots": [
+    { "template": "photo", "beats": 8,
+      "image": "assets/shot01_pet_eye.jpg", "fit": "height", "at": 0.28, "move": "push", "side": "right",
+      "cuts": [{ "beat": 0 }, { "beat": 4, "zoom": 1.7, "anchor": [0.4, 0.42] }],
+      "lines": ["Every pet", "has a world of their own."], "accent": "world", "lineBeats": 2,
+      "sub": "A world full of personality." },
+
+    { "template": "photo", "beats": 12, "transitionBeats": 0.5, "transitionType": "zoom",
+      "image": "assets/shot02_curious_dog.jpg", "anchor": [0.5, 0.55], "move": "track", "side": "right", "x": 1060,
+      "cuts": [{ "beat": 0 }, { "beat": 4, "zoom": 1.6, "anchor": [0.58, 0.42], "move": "push" }, { "beat": 8, "zoom": 1.2, "anchor": [0.45, 0.6], "move": "pull" }],
+      "lines": ["Curious by nature.", "Made for connection."], "accent": "connection.", "lineBeats": 4 },
+
+    { "template": "photo", "beats": 12, "transitionBeats": 0.5, "transitionType": "whip",
+      "image": "assets/shot03_new_world.jpg", "move": "push", "side": "left",
+      "cuts": [{ "beat": 0 }, { "beat": 4, "zoom": 1.5, "anchor": [0.6, 0.45], "move": "track" }, { "beat": 8, "zoom": 1.25, "anchor": [0.45, 0.55], "move": "pull" }],
+      "lines": ["Beyond the familiar", "there’s a world to meet."], "accent": "world to meet.", "lineBeats": 4 },
+
+    { "template": "flythrough", "beats": 12, "each": 4, "transitionBeats": 0.5, "transitionType": "whip",
+      "images": ["assets/shot02_curious_dog.jpg", "assets/shot04_dogs_meeting.jpg", "assets/shot10_real_friendship.jpg", "assets/shot03_new_world.jpg"],
+      "anchors": [[0.5, 0.5], [0.5, 0.55], [0.5, 0.45], [0.7, 0.5]],
+      "phrases": ["New faces.", "New friends.", "New adventures."], "accent": "New friends." },
+
+    { "template": "brand", "beats": 8, "transitionBeats": 1, "transitionType": "flash",
+      "layout": "reveal", "image": "assets/shot05_brand_reveal.jpg",
+      "name": "MeetMyPets.", "accent": "Pets.", "sub": "Their social life starts here." },
+
+    { "template": "photophone", "beats": 12, "transitionBeats": 0.5, "transitionType": "zoom",
+      "image": "assets/shot06_discover.jpg", "fit": "height", "at": 0.68, "move": "push", "side": "left",
+      "quad": [[0.3545, 0.1934], [0.6426, 0.1963], [0.6504, 0.8105], [0.3506, 0.8096]], "grow": 0.965, "radius": 0.05,
+      "screens": ["assets/screen_discover.png"], "burst": true,
+      "taps": [{ "t": 1.9, "x": 0.585, "y": 0.772 }, { "t": 5.2, "x": 0.585, "y": 0.772 }],
+      "swipeCard": { "t": 2.2, "box": [0.04, 0.24, 0.92, 0.6], "dir": 1 },
+      "cuts": [{ "beat": 0 }, { "beat": 6, "zoom": 1.55, "anchor": [0.5, 0.5] }],
+      "kicker": "Discover", "lines": ["Discover", "their world."], "accent": "world.",
+      "sub": "Explore pets, personalities and new connections." },
+
+    { "template": "photophone", "beats": 12, "transitionBeats": 1, "transitionType": "fade",
+      "image": "assets/shot07_pet_profile.jpg", "fit": "height", "at": 0.7, "scale": 1.45, "anchor": [0.5, 0.62], "move": "push", "side": "left", "accentStyle": "gold",
+      "quad": [[0.4189, 0.4049], [0.7266, 0.4062], [0.7227, 0.8372], [0.415, 0.8366]], "grow": 1.02, "radius": 0.04,
+      "screens": ["assets/screen_profile.png"], "pulse": 0.3, "leak": 0.5,
+      "taps": [{ "t": 2.2, "x": 0.18, "y": 0.213 }, { "t": 5.4, "x": 0.68, "y": 0.885 }],
+      "cuts": [{ "beat": 0 }, { "beat": 6, "zoom": 1.3, "anchor": [0.57, 0.6] }],
+      "kicker": "Profiles", "lines": ["Their own", "little spotlight."], "accent": "spotlight.",
+      "sub": "Create a profile that shows who they are." },
+
+    { "template": "words", "beats": 4, "each": 2, "transitionBeats": 0.5, "transitionType": "flash",
+      "phrases": ["Little moments.", "Big personalities."], "accent": "Big personalities." },
+
+    { "template": "photophone", "beats": 8,
+      "image": "assets/shot08_social_feed.jpg", "anchor": [0.5, 0.63], "move": "push", "side": "left",
+      "quad": [[0.498, 0.4798], [0.6816, 0.4876], [0.6074, 0.7754], [0.4111, 0.7565]], "grow": 1.03, "radius": 0.045,
+      "screens": ["assets/screen_feed.png"], "burst": true,
+      "flick": { "t": 0.6, "top": 0.1, "bottom": 0.83, "amount": 0.55 },
+      "taps": [{ "t": 2.6, "x": 0.856, "y": 0.64 }],
+      "cuts": [{ "beat": 0 }, { "beat": 4, "zoom": 1.4, "anchor": [0.55, 0.62] }],
+      "kicker": "Feed", "lines": ["Share their", "iconic moments."], "accent": "iconic moments.",
+      "sub": "Share their iconic pet moments with the community." },
+
+    { "template": "photophone", "beats": 12, "transitionBeats": 0.5, "transitionType": "whip",
+      "image": "assets/shot09_mutual_match.jpg", "fit": "height", "at": 0.7, "fill": "brand", "blend": "multiply", "scale": 0.9, "move": "push", "side": "left", "accentStyle": "gold",
+      "quad": [[0.279, 0.027], [0.72, 0.027], [0.72, 0.972], [0.279, 0.972]], "grow": 1.0, "radius": 0.055,
+      "screens": ["assets/screen_discover.png", "assets/screen_match.png"], "swapAt": [2.4], "burst": true,
+      "taps": [{ "t": 1.5, "x": 0.585, "y": 0.772 }],
+      "cuts": [{ "beat": 0 }, { "beat": 6, "zoom": 1.35, "anchor": [0.5, 0.45] }],
+      "kicker": "Match", "lines": ["When the vibe", "is mutual."], "accent": "mutual.",
+      "sub": "A new connection begins." },
+
+    { "template": "photo", "beats": 12, "transitionBeats": 0.5, "transitionType": "zoom",
+      "image": "assets/shot10_real_friendship.jpg", "move": "push", "side": "center", "valign": "bottom", "size": 88, "shade": 0.85,
+      "cuts": [{ "beat": 0 }, { "beat": 4, "zoom": 1.6, "anchor": [0.41, 0.36], "move": "track" }, { "beat": 8, "zoom": 1.6, "anchor": [0.6, 0.4], "move": "pull" }],
+      "lines": ["From a first hello", "to a real-life friendship."], "accent": "real-life friendship.", "lineBeats": 4 },
+
+    { "template": "brand", "beats": 11, "transitionBeats": 2, "transitionType": "fade",
+      "layout": "end", "art": "assets/shot11_endcard.jpg", "island": false,
+      "name": "MeetMyPets.", "accent": "Pets.", "tagline": "Their social life starts here.",
+      "badges": ["Coming soon on iOS", "Coming soon on Android"], "screens": ["assets/screen_discover.png"] }
+  ]
+}

@@ -2,6 +2,7 @@
 // film grain, vignette, fades/flash. Operates on the composited HDR (linear) frame.
 import * as THREE from 'three';
 import { FSPass, makeRT, W, H, SCALE } from './gl';
+import theme from '../theme.json';
 
 /** The tone shoulder (linear HDR -> 0..1 linear), shared with the engine's sampling error estimate. */
 export const SHOULDER_GLSL = /* glsl */ `
@@ -41,7 +42,7 @@ export interface PostParams {
   hudCorruption?: number;
 }
 
-export const DEFAULT_POST: PostParams = {
+const BASE_POST: PostParams = {
   exposure: 1,
   bloom: 0.55,
   bloomThreshold: 0.85,
@@ -61,6 +62,8 @@ export const DEFAULT_POST: PostParams = {
   zoom: 1,
   invert: 0,
 };
+// theme.json's look (bloom, grain, vignette...) over the defaults; scenes can still override per frame
+export const DEFAULT_POST: PostParams = { ...BASE_POST, ...theme.post };
 
 const MIPS = 7;
 

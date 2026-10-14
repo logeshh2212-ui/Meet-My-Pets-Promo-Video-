@@ -1,0 +1,419 @@
+{
+  "title": "MeetMyPets — App Launch Film (30 s)",
+  "audio": "audio/testing.mp3",
+  "audio_start": 45.553,
+  "duration": 30.585,
+  "duration_frames": 1835,
+  "fps": 60,
+  "resolution": "1920x1080",
+  "aspect_ratio": "16:9",
+  "timing_basis": {
+    "measured": true,
+    "first_downbeat": 0.0,
+    "beat_seconds": 0.82775,
+    "bar_seconds": 3.311,
+    "drop": 1.655,
+    "final_hit": 26.488,
+    "music_below_minus60db": 29.287,
+    "note": "Local times. The track's 45.553 s (a measured downbeat) is t = 0; downbeat n = n x bar."
+  },
+  "cast": {
+    "Bubbly": "your pet: the golden retriever from the Figma designs",
+    "Lily": "the match: the Australian Shepherd on the Discover card and the Feed post"
+  },
+  "shots": [
+    {
+      "id": "S01",
+      "act": "Hello",
+      "start": 0.0,
+      "end": 3.311,
+      "duration": 3.311,
+      "start_frame": 0,
+      "end_frame": 199,
+      "template": "intro",
+      "kicker": "",
+      "title": "Their social life starts here.",
+      "accent": "",
+      "sub": "",
+      "screen_asset": null,
+      "image": null,
+      "story": "Text, then logo. On the quiet build the line types itself word by word. On the drop the letters collapse into the two loops of the logo and 'MeetMyPets.' writes itself; the camera flies through the loop into the app.",
+      "ui_interaction": "None.",
+      "camera": "2D: typed line, collapse, logo pop on the drop, zoom through the loop.",
+      "audio_sync": [
+        {
+          "t": 0.0,
+          "frame": 0,
+          "event": "first word"
+        },
+        {
+          "t": 1.655,
+          "frame": 99,
+          "event": "DROP: letters collapse, logo"
+        },
+        {
+          "t": 3.311,
+          "frame": 199,
+          "event": "downbeat: into the app"
+        }
+      ]
+    },
+    {
+      "id": "S02",
+      "act": "Sign in",
+      "start": 3.311,
+      "end": 6.622,
+      "duration": 3.311,
+      "start_frame": 199,
+      "end_frame": 397,
+      "template": "signin",
+      "kicker": "Sign in",
+      "title": "Settle in.",
+      "accent": "in.",
+      "sub": "",
+      "screen_asset": [
+        "assets/figma/Login Page.png"
+      ],
+      "image": null,
+      "story": "Sign in. The Login screen explodes into layers.",
+      "ui_interaction": "Email: paw-tap, focus ring, types itself. Password: paw-tap, dots. Login: paw-tap, press, loading circle, red burst.",
+      "camera": "Side angle on the exploded phone; whip-orbits between the three fields.",
+      "audio_sync": [
+        {
+          "t": 3.311,
+          "frame": 199,
+          "event": "layers explode"
+        },
+        {
+          "t": 4.139,
+          "frame": 248,
+          "event": "email"
+        },
+        {
+          "t": 4.966,
+          "frame": 298,
+          "event": "password"
+        },
+        {
+          "t": 5.794,
+          "frame": 348,
+          "event": "login"
+        },
+        {
+          "t": 6.622,
+          "frame": 397,
+          "event": "burst"
+        }
+      ]
+    },
+    {
+      "id": "S03",
+      "act": "Your pet",
+      "start": 6.622,
+      "end": 9.933,
+      "duration": 3.311,
+      "start_frame": 397,
+      "end_frame": 596,
+      "template": "create",
+      "kicker": "Create",
+      "title": "Their own spotlight.",
+      "accent": "spotlight.",
+      "sub": "",
+      "screen_asset": [
+        "assets/figma/Create Pet Profile Page 01 (1).png",
+        "assets/figma/Pet Info page.png",
+        "assets/figma/Discover page.png"
+      ],
+      "image": null,
+      "story": "Where you are, then who your pet is: a location pin drops, then Bubbly's profile is built in four taps.",
+      "ui_interaction": "'Use My Current Location': paw-tap, pin drops. Photo circle: paw-tap, Bubbly's photo drops in. Name types 'Bubbly'. Paw-type: tap 'Female'. Traits 'Playful' and 'Friendly' pop. Completion ring 30% to 100%. 'Create Their Profile': tap; Bubbly's profile card flies in.",
+      "camera": "Top-down: the phone lies flat like a card on a desk and the widgets pop up out of it; the camera rotates overhead, then tilts.",
+      "audio_sync": [
+        {
+          "t": 6.622,
+          "frame": 397,
+          "event": "location pin"
+        },
+        {
+          "t": 7.45,
+          "frame": 447,
+          "event": "photo"
+        },
+        {
+          "t": 7.864,
+          "frame": 472,
+          "event": "name"
+        },
+        {
+          "t": 8.277,
+          "frame": 497,
+          "event": "female"
+        },
+        {
+          "t": 8.691,
+          "frame": 521,
+          "event": "traits"
+        },
+        {
+          "t": 9.105,
+          "frame": 546,
+          "event": "create"
+        }
+      ]
+    },
+    {
+      "id": "S04",
+      "act": "Feed",
+      "start": 9.933,
+      "end": 13.244,
+      "duration": 3.311,
+      "start_frame": 596,
+      "end_frame": 795,
+      "template": "feed",
+      "kicker": "Feed",
+      "title": "Like what you love.",
+      "accent": "love.",
+      "sub": "",
+      "screen_asset": [
+        "assets/figma/Discover page (1).png",
+        "assets/figma/Feed page.png"
+      ],
+      "image": null,
+      "story": "Lily's post, huge like a billboard. Double-tap like, follow.",
+      "ui_interaction": "Double paw-tap on the photo: heart blooms, rail heart fills, 111 rolls to 112. Paw-tap 'Follow': orange 'Following'. The post flicks up.",
+      "camera": "Low dolly past the post, then a rack to the like rail floating beside it.",
+      "audio_sync": [
+        {
+          "t": 9.933,
+          "frame": 596,
+          "event": "post"
+        },
+        {
+          "t": 10.761,
+          "frame": 646,
+          "event": "double-tap like"
+        },
+        {
+          "t": 11.588,
+          "frame": 695,
+          "event": "follow"
+        },
+        {
+          "t": 12.416,
+          "frame": 745,
+          "event": "flick"
+        }
+      ]
+    },
+    {
+      "id": "S05",
+      "act": "Discover",
+      "start": 13.244,
+      "end": 16.555,
+      "duration": 3.311,
+      "start_frame": 795,
+      "end_frame": 993,
+      "template": "discover",
+      "kicker": "Discover",
+      "title": "Pets near you.",
+      "accent": "near you.",
+      "sub": "",
+      "screen_asset": [
+        "assets/figma/Discover page.png",
+        "assets/figma/Discover page (1).png"
+      ],
+      "image": null,
+      "story": "The Discover cards fly out of the phone and fan out in 3D. Pass on one, like Lily.",
+      "ui_interaction": "Paw-tap X: Max's card flies off left. Lily's card comes forward. Paw-tap the heart: like.",
+      "camera": "Over-the-shoulder from behind the fan, swinging round to face Lily's card.",
+      "audio_sync": [
+        {
+          "t": 13.244,
+          "frame": 795,
+          "event": "fan out"
+        },
+        {
+          "t": 14.072,
+          "frame": 844,
+          "event": "pass"
+        },
+        {
+          "t": 14.899,
+          "frame": 894,
+          "event": "Lily forward"
+        },
+        {
+          "t": 15.727,
+          "frame": 944,
+          "event": "like"
+        }
+      ]
+    },
+    {
+      "id": "S06",
+      "act": "Match",
+      "start": 16.555,
+      "end": 19.866,
+      "duration": 3.311,
+      "start_frame": 993,
+      "end_frame": 1192,
+      "template": "match",
+      "kicker": "Match",
+      "title": "The vibe is mutual.",
+      "accent": "mutual.",
+      "sub": "",
+      "screen_asset": [
+        "assets/figma_rebuilt/match@4x.png"
+      ],
+      "image": null,
+      "story": "Bubbly's coral loop and Lily's amber loop fly in and interlock into the match symbol: It's a Match!",
+      "ui_interaction": "Match screen (real strings, 'Lily liked you back.'). Paw-tap 'Chat Now'.",
+      "camera": "Dark space; fast dolly-out from inside the symbol with a 20 deg orbit.",
+      "audio_sync": [
+        {
+          "t": 16.555,
+          "frame": 993,
+          "event": "loops interlock"
+        },
+        {
+          "t": 17.383,
+          "frame": 1043,
+          "event": "It's a Match!"
+        },
+        {
+          "t": 19.038,
+          "frame": 1142,
+          "event": "Chat Now tap"
+        }
+      ]
+    },
+    {
+      "id": "S07",
+      "act": "Chat",
+      "start": 19.866,
+      "end": 23.177,
+      "duration": 3.311,
+      "start_frame": 1192,
+      "end_frame": 1391,
+      "template": "chat",
+      "kicker": "Chat",
+      "title": "Say hello.",
+      "accent": "hello.",
+      "sub": "",
+      "screen_asset": [
+        "assets/figma/Messaging page (1).png"
+      ],
+      "image": null,
+      "story": "Chat Now stretches into the conversation; the messages step out of the phone.",
+      "ui_interaction": "Input types 'Playdate at the park?'; paw-tap send; bubble flies into the thread; typing dots; Lily replies 'Yes! See you at 5'.",
+      "camera": "Side angle along the bubbles like stepping stones; lateral track.",
+      "audio_sync": [
+        {
+          "t": 19.866,
+          "frame": 1192,
+          "event": "chat opens"
+        },
+        {
+          "t": 20.694,
+          "frame": 1242,
+          "event": "typing"
+        },
+        {
+          "t": 21.521,
+          "frame": 1291,
+          "event": "send"
+        },
+        {
+          "t": 22.349,
+          "frame": 1341,
+          "event": "reply"
+        }
+      ]
+    },
+    {
+      "id": "S08",
+      "act": "Everything",
+      "start": 23.177,
+      "end": 26.488,
+      "duration": 3.311,
+      "start_frame": 1391,
+      "end_frame": 1589,
+      "template": "montage",
+      "kicker": "",
+      "title": "Discover. Connect. Belong.",
+      "accent": "Belong.",
+      "sub": "",
+      "screen_asset": [
+        "assets/figma/Discover page.png",
+        "assets/figma_rebuilt/match@4x.png",
+        "assets/figma/Messaging page (1).png",
+        "assets/figma/Pet Info page.png"
+      ],
+      "image": null,
+      "story": "Everything you just did, one per beat: a card, the match, a chat bubble, Bubbly's profile; the two loop-lines braid them together.",
+      "ui_interaction": "Each widget gives one last reaction as it whips past.",
+      "camera": "One whip-pan per beat.",
+      "audio_sync": [
+        {
+          "t": 23.177,
+          "frame": 1391,
+          "event": "Discover."
+        },
+        {
+          "t": 24.005,
+          "frame": 1440,
+          "event": "Connect."
+        },
+        {
+          "t": 24.832,
+          "frame": 1490,
+          "event": "Belong."
+        },
+        {
+          "t": 25.66,
+          "frame": 1540,
+          "event": "collapse"
+        }
+      ]
+    },
+    {
+      "id": "S09",
+      "act": "End",
+      "start": 26.488,
+      "end": 30.585,
+      "duration": 4.097,
+      "start_frame": 1589,
+      "end_frame": 1835,
+      "template": "endcard",
+      "kicker": "",
+      "title": "MeetMyPets.",
+      "accent": "Pets.",
+      "sub": "Their social life starts here.",
+      "badges": [
+        "Coming soon"
+      ],
+      "screen_asset": null,
+      "image": null,
+      "story": "The two loops lock into the woven logo on the final hit; wordmark, tagline, Coming soon; hold to the end.",
+      "ui_interaction": "None.",
+      "camera": "Locked.",
+      "audio_sync": [
+        {
+          "t": 26.488,
+          "frame": 1589,
+          "event": "final hit: logo"
+        },
+        {
+          "t": 29.287,
+          "frame": 1757,
+          "event": "music gone"
+        },
+        {
+          "t": 30.585,
+          "frame": 1835,
+          "event": "end"
+        }
+      ]
+    }
+  ]
+}

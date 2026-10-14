@@ -1,0 +1,1173 @@
+{
+  "title": "MeetMyPets — App Launch Film",
+  "audio": "audio/testing.mp3",
+  "duration": 76.138,
+  "duration_frames": 4568,
+  "fps": 60,
+  "resolution": "1920x1080",
+  "aspect_ratio": "16:9",
+  "style": "premium 3D product launch",
+  "timing_basis": {
+    "measured": true,
+    "first_sound": 0.67,
+    "first_downbeat": 2.51,
+    "bar_seconds": 3.311,
+    "beat_seconds": 0.8277,
+    "tempo_bpm": 72.49,
+    "note": "Downbeat n = 2.510 + n x bar. Every bar has a ~0.33 s bass gap before the next downbeat; transitions live in that gap.",
+    "drop": 47.208,
+    "breakdown": [
+      42.242,
+      47.208
+    ],
+    "final_hit": 72.041,
+    "music_below_minus45db": 74.26,
+    "music_below_minus60db": 74.84
+  },
+  "brand": {
+    "palette": {
+      "primary": "#FF1744",
+      "secondary": "#FF7A00",
+      "accent": "#FFC107",
+      "background": "#FFFAFA",
+      "text": "#212738"
+    },
+    "fonts": {
+      "display": "Bricolage Grotesque",
+      "body": "Nunito Sans",
+      "wordmark": "Love Ya Like A Sister (chosen by the user for the MeetMyPets wordmark)"
+    },
+    "tagline": "Their social life starts here."
+  },
+  "characters": {
+    "Shiro": "the user's pet: Shiro, a young adult cream Shiba Inu: pale cream-white coat with faint warm-biscuit shading on the ears and back, cream urajiro cheeks, small upright triangular ears, dark almond-shaped eyes, black nose and lips, tightly curled tail over the back, wearing a slim glossy red leather collar (#E8102E) with a small round brushed-gold tag",
+    "Tom": "the matched pet: Tom, a young adult golden retriever: medium-gold wavy coat with lighter feathering on ears, chest and legs, friendly dark-brown eyes, black nose, wearing a forest-green flat fabric collar (no tag text)"
+  },
+  "visual_language": {
+    "two_loops": "The story line of the film. Shiro's loop-line (coral #FF1744 -> #FF7A00) and Tom's loop-line (amber #FFC107 -> #FF7A00) are thin glossy 3D tubes with the same stroke weight as the logo. They draw themselves through the scenes and do the transitions instead of generic ribbons or whips. Shiro's is born in S01, Tom's in S09. They first cross at the Follow (S12), touch at the like (S14), interlock into the match symbol on the drop (S15), braid the features together (S20) and pull tight into the woven logo (S21). The logo is literally the two pets' paths.",
+    "paw_tap": "Every tap is a soft paw-pad glyph (from the app's Paw.svg) that presses with a little squash and a thin ripple ring. It is coral for Shiro's owner. It replaces cursor hands and plain dots.",
+    "tag_type": "Headlines arrive one to three words per beat in Bricolage Grotesque. The key word lands inside a rounded pill shaped like a pet's collar tag (the same radius as the app's info chips), hanging from a tiny ring. It swings and settles (damped pendulum, ~0.5 s). Other words spring in with a short blur.",
+    "swipe_cuts": "Act changes use the app's own gestures: the whole frame becomes a card and is swiped by a paw. Swiping right flashes the app's heart stamp for 2 frames. A Feed change is swiped up like a scroll. Used only 3 times (S02->S03, S10->S11, S19->S20).",
+    "ring_to_loop": "The app's real completion capsule closes at 100% and stretches into Shiro's loop. Product UI becomes the brand motif.",
+    "interactive_widgets": "Every feature is shown by using it: the widget lifts out of the phone as a 3D layer cut pixel-exact from the Figma export, flies to the camera, gets a paw-tap and responds exactly as in the app (typing, toggles, chips, likes, counters, flips). Each shot has its own camera idea (overhead, worm's-eye, over-the-shoulder, billboard dolly, orbit), never the same phone move twice.",
+    "wide_layout": "16:9 for YouTube. Copy sits in the free side of the frame; the side changes with each act."
+  },
+  "transition_rule": "Every transition happens inside the outgoing shot's last 0.33 s (its transition_window). Incoming shots start exactly on the downbeat, so overlaps never add time.",
+  "shots": [
+    {
+      "id": "S01",
+      "act": "1 Hello",
+      "start": 0.0,
+      "end": 2.51,
+      "duration": 2.51,
+      "start_frame": 0,
+      "end_frame": 151,
+      "frames": 151,
+      "template": "photo",
+      "image": "assets/film/p01_eye_macro.png",
+      "image_prompt_id": "P01",
+      "screen_asset": null,
+      "screen_asset_status": null,
+      "kicker": "",
+      "title": "Every pet\nhas a story.",
+      "accent": "story.",
+      "sub": "",
+      "purpose": "Hook: meet Shiro before the product.",
+      "composition": "Macro of Shiro's eye in the right third; title lower-left.",
+      "camera": "Slow dolly-in on the eye with depth parallax; rack focus lashes -> iris.",
+      "motion": "Tag type on the beats; 'story.' lands in the collar-tag pill.",
+      "ui_interaction": "None.",
+      "vfx": "Catchlight flare on the 1.50 hit becomes the point where Shiro's coral loop-line is born.",
+      "transition_in": "Fade up with the first sound (0.67).",
+      "transition_out": "The coral line swoops out of the pupil across the frame (2.18-2.51).",
+      "transition_window": [
+        2.18,
+        2.51
+      ],
+      "audio_sync": [
+        {
+          "t": 0.67,
+          "frame": 40,
+          "event": "first sound"
+        },
+        {
+          "t": 1.5,
+          "frame": 90,
+          "event": "pickup hit -> catchlight"
+        },
+        {
+          "t": 2.51,
+          "frame": 151,
+          "event": "downbeat -> cut"
+        }
+      ],
+      "sfx": "None.",
+      "assets_needed": [
+        "P01 at 16:9"
+      ],
+      "image_prompt": "Extreme macro photograph of the left eye of Shiro, a young adult cream Shiba Inu: pale cream-white coat with faint warm-biscuit shading on the ears and back, cream urajiro cheeks, small upright triangular ears, dark almond-shaped eyes, black nose and lips, tightly curled tail over the back, wearing a slim glossy red leather collar (#E8102E) with a small round brushed-gold tag. 16:9 wide frame. The eye sits in the right third of the frame, slightly above the middle; lashes and cream fur in razor-sharp detail around it, the left half of the frame falling into soft creamy out-of-focus fur. Warm late-afternoon sunlight from the right, a single round catchlight in the dark brown iris, honey and ember tones, cinematic colour grade, 100 mm macro lens at f/2.8. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "S02",
+      "act": "1 Hello",
+      "start": 2.51,
+      "end": 5.821,
+      "duration": 3.311,
+      "start_frame": 151,
+      "end_frame": 349,
+      "frames": 198,
+      "template": "photo",
+      "image": "assets/film/p02_doorstep.png",
+      "image_prompt_id": "P02",
+      "screen_asset": null,
+      "screen_asset_status": null,
+      "kicker": "",
+      "title": "Their world\nis bigger\nthan home.",
+      "accent": "bigger",
+      "sub": "",
+      "purpose": "Curiosity: the world outside is bigger than home.",
+      "composition": "Shiro in the left third on the doorstep; headline upper-right.",
+      "camera": "2.5D lateral truck with parallax.",
+      "motion": "Tag type on the beats.",
+      "ui_interaction": "None.",
+      "vfx": "The coral loop-line runs down the street, leading Shiro's gaze.",
+      "transition_in": "Cut behind the loop-line.",
+      "transition_out": "Swipe cut: the frame is swiped right like a Discover card (heart stamp, 2 frames).",
+      "transition_window": [
+        5.491,
+        5.821
+      ],
+      "audio_sync": [
+        {
+          "t": 2.51,
+          "frame": 151,
+          "event": "downbeat"
+        },
+        {
+          "t": 5.821,
+          "frame": 349,
+          "event": "downbeat -> cut"
+        }
+      ],
+      "sfx": "None.",
+      "assets_needed": [
+        "P02 at 16:9"
+      ],
+      "image_prompt": "Cinematic photograph, 16:9 wide frame. Shiro, a young adult cream Shiba Inu: pale cream-white coat with faint warm-biscuit shading on the ears and back, cream urajiro cheeks, small upright triangular ears, dark almond-shaped eyes, black nose and lips, tightly curled tail over the back, wearing a slim glossy red leather collar (#E8102E) with a small round brushed-gold tag, standing on a warm stone doorstep in the left third of the frame, head turned toward a quiet tree-lined residential street that recedes to a soft vanishing point right of centre. Low camera at dog eye height, 35 mm lens, f/2.8, golden-hour backlight down the street, warm haze, soft rim light on the cream fur. The upper right of the frame is calm sky and blurred foliage with little detail. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "S03",
+      "act": "1 Hello",
+      "start": 5.821,
+      "end": 9.132,
+      "duration": 3.311,
+      "start_frame": 349,
+      "end_frame": 548,
+      "frames": 199,
+      "template": "brand",
+      "image": "assets/film/p03_brand_gradient.png",
+      "image_prompt_id": "P03",
+      "screen_asset": null,
+      "screen_asset_status": null,
+      "kicker": "",
+      "title": "MeetMyPets.",
+      "accent": "Pets.",
+      "sub": "Their social life starts here.",
+      "purpose": "Brand: name and promise.",
+      "composition": "Double-loop centred; 'MeetMyPets.' in Love Ya Like A Sister; tagline.",
+      "camera": "Locked, slow 6 deg orbit while the mark draws.",
+      "motion": "Shiro's coral line draws one loop; the second loop is a faint ghost (waiting for Tom). Wordmark on beat 2, tagline on beat 3.",
+      "ui_interaction": "None.",
+      "vfx": "Bloom only on the loop.",
+      "transition_in": "Swipe cut.",
+      "transition_out": "The coral loop shrinks into depth and becomes the glow that wakes the phone screen.",
+      "transition_window": [
+        8.802,
+        9.132
+      ],
+      "audio_sync": [
+        {
+          "t": 5.821,
+          "frame": 349,
+          "event": "downbeat -> loop draws"
+        },
+        {
+          "t": 6.649,
+          "frame": 399,
+          "event": "wordmark"
+        },
+        {
+          "t": 7.476,
+          "frame": 449,
+          "event": "tagline"
+        },
+        {
+          "t": 9.132,
+          "frame": 548,
+          "event": "downbeat -> cut"
+        }
+      ],
+      "sfx": "None.",
+      "assets_needed": [
+        "mmp_mark.svg"
+      ],
+      "image_prompt": "Empty seamless studio backdrop, 16:9 wide, photographic, ultra clean. Smooth gradient from warm coral-pink at the top to soft orange at the bottom, a gentle lighter glow behind the centre at about 40% of the height, soft large overhead light, very fine film grain, no objects, no shapes, nothing in frame. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "S04",
+      "act": "2 Sign in",
+      "start": 9.132,
+      "end": 15.754,
+      "duration": 6.622,
+      "start_frame": 548,
+      "end_frame": 945,
+      "frames": 397,
+      "template": "widgets",
+      "image": "assets/film/p05_studio_light.png",
+      "image_prompt_id": "P05",
+      "screen_asset": [
+        "assets/figma/iPhone 14 & 15 Pro - 2@4x.png",
+        "assets/figma/Login Page.png"
+      ],
+      "screen_asset_status": {
+        "assets/figma/iPhone 14 & 15 Pro - 2@4x.png": "FIGMA 4x: splash (dog-and-cat icon + serif wordmark on orange->red)",
+        "assets/figma/Login Page.png": "FIGMA 4x: Login (Welcome, Email, Password, Login, Apple/Google)"
+      },
+      "kicker": "Sign in",
+      "title": "Settle in.",
+      "accent": "in.",
+      "sub": "",
+      "purpose": "The story starts like every user's: open the app and sign in.",
+      "composition": "Phone right of centre, tilted 3/4; the Login screen comes apart into floating layers; each widget flies to the camera when it is used. Kicker + title top-left.",
+      "camera": "Starts with the splash filling the frame; pulls back and arcs 40 deg around the phone while the layers separate; then pushes to each widget as it comes forward.",
+      "motion": "9.132 splash wipes to Login. 9.96 layers lift (staggered). 10.79 email forward + paw-tap + typing. 12.86 password forward + paw-tap + dots. 14.10 Login forward + paw-tap + press -> loading circle -> red burst.",
+      "ui_interaction": "Splash -> Login. The Login screen separates into layers. Email field: paw-tap, orange focus ring, the address types itself. Password field: paw-tap, dots type in. Login button: paw-tap, it presses, shrinks into a loading circle, and the circle bursts into the red of the next screen.",
+      "vfx": "Soft contact shadows under every lifted layer; the screen behind dims slightly; a focus glow on the active field.",
+      "transition_in": "The glow from S03 wakes the screen.",
+      "transition_out": "The Login button's loading circle bursts into a red disc that fills the frame: the red header of Complete Your Profile.",
+      "transition_window": [
+        15.424,
+        15.754
+      ],
+      "audio_sync": [
+        {
+          "t": 9.132,
+          "frame": 548,
+          "event": "downbeat -> splash"
+        },
+        {
+          "t": 9.96,
+          "frame": 598,
+          "event": "layers lift"
+        },
+        {
+          "t": 10.787,
+          "frame": 647,
+          "event": "email tap"
+        },
+        {
+          "t": 12.857,
+          "frame": 771,
+          "event": "password tap"
+        },
+        {
+          "t": 14.098,
+          "frame": 846,
+          "event": "Login tap"
+        },
+        {
+          "t": 15.754,
+          "frame": 945,
+          "event": "downbeat -> cut"
+        }
+      ],
+      "sfx": "Soft key ticks, one tap per paw (-20 dB).",
+      "assets_needed": [
+        "Login Page.png (Figma 4x)",
+        "iPhone 14 & 15 Pro - 2@4x.png (splash)"
+      ],
+      "image_prompt": "Empty seamless studio cyclorama background, 16:9 wide, photographic. Warm off-white centre with a soft peach and light coral gradient toward the edges, a very soft barely visible floor line at about 62% of the height, gentle radial glow behind the centre, soft overhead light, smooth and clean with fine film grain. No objects at all. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "S05",
+      "act": "3 You",
+      "start": 15.754,
+      "end": 19.065,
+      "duration": 3.311,
+      "start_frame": 945,
+      "end_frame": 1144,
+      "frames": 199,
+      "template": "widgets",
+      "image": "assets/film/p05_studio_light.png",
+      "image_prompt_id": "P05",
+      "screen_asset": [
+        "assets/figma/Create Your Profile Page 01.png",
+        "assets/figma/Create Your Profile Page 02.png"
+      ],
+      "screen_asset_status": {
+        "assets/figma/Create Your Profile Page 01.png": "FIGMA 4x: Complete Your Profile (owner)",
+        "assets/figma/Create Your Profile Page 02.png": "FIGMA 1x: Location card (Use My Current Location / Search Manually), Complete My Profile"
+      },
+      "kicker": "Your profile",
+      "title": "Near you.",
+      "accent": "you.",
+      "sub": "",
+      "purpose": "Tell the app who you are and where you are: the base of nearby discovery.",
+      "composition": "The red 'Complete Your Profile' header fills the frame, then the camera drops low and looks up at the location card standing like a sign.",
+      "camera": "Low-angle tilt-up (worm's-eye) on the location card, then a quick push.",
+      "motion": "15.754 header. 16.17 name types. 17.00 location card stands up. 17.82 paw-tap -> pin drop + ripple.",
+      "ui_interaction": "Name field fills; the 'Choose Your Location' card stands up out of the phone; paw-tap 'Use My Current Location' -> a pin drops onto the card with a ripple; 'Complete My Profile' presses.",
+      "vfx": "Pin drop with a soft bounce shadow.",
+      "transition_in": "Red burst.",
+      "transition_out": "'Complete My Profile' presses and the screen slides up to Create Pet Profile (orange).",
+      "transition_window": [
+        18.735,
+        19.065
+      ],
+      "audio_sync": [
+        {
+          "t": 15.754,
+          "frame": 945,
+          "event": "downbeat"
+        },
+        {
+          "t": 17.823,
+          "frame": 1069,
+          "event": "location tap"
+        },
+        {
+          "t": 19.065,
+          "frame": 1144,
+          "event": "downbeat -> cut"
+        }
+      ],
+      "sfx": "One soft tap.",
+      "assets_needed": [
+        "Create Your Profile Page 01/02"
+      ],
+      "image_prompt": "Empty seamless studio cyclorama background, 16:9 wide, photographic. Warm off-white centre with a soft peach and light coral gradient toward the edges, a very soft barely visible floor line at about 62% of the height, gentle radial glow behind the centre, soft overhead light, smooth and clean with fine film grain. No objects at all. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "S06",
+      "act": "4 Your pet",
+      "start": 19.065,
+      "end": 25.687,
+      "duration": 6.622,
+      "start_frame": 1144,
+      "end_frame": 1541,
+      "frames": 397,
+      "template": "widgets",
+      "image": "assets/film/p05_studio_light.png",
+      "image_prompt_id": "P05",
+      "screen_asset": [
+        "assets/figma/Create Pet Profile Page 01 (1).png",
+        "assets/figma/Manage Pet Profile (1).png"
+      ],
+      "screen_asset_status": {
+        "assets/figma/Create Pet Profile Page 01 (1).png": "FIGMA 4x: current version ('Build Your Pet's Spotlight!', matches app code). Scroll parts: 'Create Pet Profile Page 02.png' (1x), 'Create Pet Profile Page 03.png' (4x)",
+        "assets/figma/Manage Pet Profile (1).png": "FIGMA 1x (393x852; re-export at 4x if possible): 'Select Traits' chips + Save Traits"
+      },
+      "kicker": "Create",
+      "title": "Their own\nlittle spotlight.",
+      "accent": "spotlight.",
+      "sub": "",
+      "purpose": "Give your pet a profile: photo, name, paw-type, looks, personality.",
+      "composition": "Top-down 'desk' angle: the Create Pet Profile form lies flat like a card on a table, its parts lifting one at a time. Then a side angle on the Traits chips.",
+      "camera": "Overhead (top-down) slow rotate, then tilt to a 3/4 side view for the chips, then follow the coin up.",
+      "motion": "Two bars of taps on the beats (photo, name, paw-type, chip, chip, create).",
+      "ui_interaction": "Photo circle: paw-tap -> Shiro's photo drops in. Name: types 'Shiro'. Paw-Type: paw-tap 'Male'. Traits: paw-taps 'Playful' and 'Friendly', each chip pops orange. The completion capsule climbs 30% -> 100%. 'Create Their Profile' presses; the ring closes and stretches into Shiro's coral loop around the photo = the coin.",
+      "vfx": "The capsule's ring glints when it closes.",
+      "transition_in": "Slide up.",
+      "transition_out": "The coin (Shiro's photo in the coral loop) flies up and drops into Discover's pet switcher.",
+      "transition_window": [
+        25.357,
+        25.687
+      ],
+      "audio_sync": [
+        {
+          "t": 19.065,
+          "frame": 1144,
+          "event": "downbeat -> photo"
+        },
+        {
+          "t": 22.376,
+          "frame": 1343,
+          "event": "downbeat -> traits"
+        },
+        {
+          "t": 24.859,
+          "frame": 1492,
+          "event": "create tap"
+        },
+        {
+          "t": 25.687,
+          "frame": 1541,
+          "event": "downbeat -> cut"
+        }
+      ],
+      "sfx": "Taps.",
+      "assets_needed": [
+        "Create Pet Profile Page 01 (1).png",
+        "Manage Pet Profile (1).png (Traits)",
+        "P07 Shiro photo"
+      ],
+      "image_prompt": "Empty seamless studio cyclorama background, 16:9 wide, photographic. Warm off-white centre with a soft peach and light coral gradient toward the edges, a very soft barely visible floor line at about 62% of the height, gentle radial glow behind the centre, soft overhead light, smooth and clean with fine film grain. No objects at all. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "S07",
+      "act": "5 Discover",
+      "start": 25.687,
+      "end": 32.309,
+      "duration": 6.622,
+      "start_frame": 1541,
+      "end_frame": 1939,
+      "frames": 398,
+      "template": "widgets",
+      "image": "assets/film/p05_studio_light.png",
+      "image_prompt_id": "P05",
+      "screen_asset": [
+        "assets/figma/Discover page.png",
+        "assets/figma/Pet Info page.png"
+      ],
+      "screen_asset_status": {
+        "assets/figma/Discover page.png": "FIGMA 4x: Discover card stack (sample data 'Lily - Husky' is replaced in the rebuild)",
+        "assets/figma/Pet Info page.png": "FIGMA 2x: another pet's profile (Follow, distance, stats, Pet Details, Gallery); gallery scroll in 'Pet Info page (1).png'"
+      },
+      "kicker": "Discover",
+      "title": "Discover\ntheir world.",
+      "accent": "world.",
+      "sub": "",
+      "purpose": "Discover pets near you: swipe, pass, and open a profile.",
+      "composition": "The Discover card stack leaves the phone and fans out in 3D like a hand of cards in front of camera; the phone stays behind, out of focus.",
+      "camera": "Starts behind the fan (over-the-shoulder), swings around to face it, then a close-up on the flip.",
+      "motion": "Card flights on beats 1-4 of bar 1; flip on bar 2 beat 1; Follow on beat 3.",
+      "ui_interaction": "Paw swipes card 1 right (heart stamp); paw-taps X on card 2; Tom's card comes to the front; paw-tap (i): the card flips over and its back is Tom's profile page; paw-tap Follow -> Following.",
+      "vfx": "Card slabs with thickness and shadows; motion blur on flights.",
+      "transition_in": "Coin lands in the pet switcher.",
+      "transition_out": "Tom's gallery photo slides up out of his profile into the Feed (swipe-up cut).",
+      "transition_window": [
+        31.979,
+        32.309
+      ],
+      "audio_sync": [
+        {
+          "t": 25.687,
+          "frame": 1541,
+          "event": "downbeat -> swipe"
+        },
+        {
+          "t": 28.998,
+          "frame": 1740,
+          "event": "downbeat -> flip"
+        },
+        {
+          "t": 32.309,
+          "frame": 1939,
+          "event": "downbeat -> cut"
+        }
+      ],
+      "sfx": "Swipe air, taps.",
+      "assets_needed": [
+        "Discover page.png",
+        "Pet Info page.png",
+        "P08 Tom photo"
+      ],
+      "image_prompt": "Empty seamless studio cyclorama background, 16:9 wide, photographic. Warm off-white centre with a soft peach and light coral gradient toward the edges, a very soft barely visible floor line at about 62% of the height, gentle radial glow behind the centre, soft overhead light, smooth and clean with fine film grain. No objects at all. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "S08",
+      "act": "6 Feed",
+      "start": 32.309,
+      "end": 38.931,
+      "duration": 6.622,
+      "start_frame": 1939,
+      "end_frame": 2336,
+      "frames": 397,
+      "template": "widgets",
+      "image": "assets/film/p05_studio_light.png",
+      "image_prompt_id": "P05",
+      "screen_asset": [
+        "assets/figma/Feed page.png"
+      ],
+      "screen_asset_status": {
+        "assets/figma/Feed page.png": "FIGMA 4x: Feed (Liked pill, Follow, rail); 'Following' + 'Matched' tag states in 'Discover page (1).png' (2x, misnamed)"
+      },
+      "kicker": "Feed",
+      "title": "Stop everything.\nLook at this pet.",
+      "accent": "this pet.",
+      "sub": "",
+      "purpose": "Share and react: like a post, follow a pet.",
+      "composition": "Tom's post stands huge like a billboard in the studio; the like/comment/share rail floats beside it as separate 3D buttons.",
+      "camera": "Low dolly along the post like walking past a billboard; a quick rack-focus to the rail.",
+      "motion": "Like on bar 1 beat 1, counter roll; Follow on beat 3; rail bounces on bar 2.",
+      "ui_interaction": "Paw double-taps the photo -> a heart blooms and the counter rolls 111 -> 112; paw-tap Follow -> orange Following; comment and share buttons bounce in turn.",
+      "vfx": "Heart bloom (no confetti).",
+      "transition_in": "Swipe up.",
+      "transition_out": "Feed flicks up fast; the coral line streaks across as the bass drops.",
+      "transition_window": [
+        38.601,
+        38.931
+      ],
+      "audio_sync": [
+        {
+          "t": 32.309,
+          "frame": 1939,
+          "event": "downbeat -> like"
+        },
+        {
+          "t": 33.964,
+          "frame": 2038,
+          "event": "follow"
+        },
+        {
+          "t": 38.931,
+          "frame": 2336,
+          "event": "downbeat -> cut"
+        }
+      ],
+      "sfx": "Like pop.",
+      "assets_needed": [
+        "Feed page.png",
+        "Discover page (1).png (Following / Matched states)",
+        "P09 Tom post"
+      ],
+      "image_prompt": "Empty seamless studio cyclorama background, 16:9 wide, photographic. Warm off-white centre with a soft peach and light coral gradient toward the edges, a very soft barely visible floor line at about 62% of the height, gentle radial glow behind the centre, soft overhead light, smooth and clean with fine film grain. No objects at all. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "S09",
+      "act": "6 Feed",
+      "start": 38.931,
+      "end": 42.242,
+      "duration": 3.311,
+      "start_frame": 2336,
+      "end_frame": 2535,
+      "frames": 199,
+      "template": "widgets",
+      "image": "assets/film/p05_studio_light.png",
+      "image_prompt_id": "P05",
+      "screen_asset": [
+        "assets/figma/Feed page.png",
+        "assets/figma/Discover page.png"
+      ],
+      "screen_asset_status": {
+        "assets/figma/Feed page.png": "FIGMA 4x: Feed (Liked pill, Follow, rail); 'Following' + 'Matched' tag states in 'Discover page (1).png' (2x, misnamed)",
+        "assets/figma/Discover page.png": "FIGMA 4x: Discover card stack (sample data 'Lily - Husky' is replaced in the rebuild)"
+      },
+      "kicker": "",
+      "title": "",
+      "accent": "",
+      "sub": "",
+      "purpose": "Bridge: back to Discover as the music empties.",
+      "composition": "Wide: the phone small in a big warm space; the bottom nav bar lifts off and floats toward the camera.",
+      "camera": "Speed-ramped pull-back, then a slow push into the glowing tab.",
+      "motion": "Bass drops ~40.6 -> slow motion; tab tap on beat 4.",
+      "ui_interaction": "Paw-tap the double-loop Discover tab on the floating nav bar; it glows.",
+      "vfx": "Exposure dips toward the breakdown.",
+      "transition_in": "Streak.",
+      "transition_out": "The camera passes through the double-loop tab into the dark.",
+      "transition_window": [
+        41.912,
+        42.242
+      ],
+      "audio_sync": [
+        {
+          "t": 38.931,
+          "frame": 2336,
+          "event": "downbeat"
+        },
+        {
+          "t": 40.6,
+          "frame": 2436,
+          "event": "bass out -> slow motion"
+        },
+        {
+          "t": 42.242,
+          "frame": 2535,
+          "event": "breakdown"
+        }
+      ],
+      "sfx": "One tap.",
+      "assets_needed": [
+        "Nav bar from the Feed export"
+      ],
+      "image_prompt": "Empty seamless studio cyclorama background, 16:9 wide, photographic. Warm off-white centre with a soft peach and light coral gradient toward the edges, a very soft barely visible floor line at about 62% of the height, gentle radial glow behind the centre, soft overhead light, smooth and clean with fine film grain. No objects at all. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "S10",
+      "act": "7 Match",
+      "start": 42.242,
+      "end": 47.208,
+      "duration": 4.966,
+      "start_frame": 2535,
+      "end_frame": 2832,
+      "frames": 297,
+      "template": "widgets",
+      "image": "assets/film/p06_studio_dark.png",
+      "image_prompt_id": "P06",
+      "screen_asset": [
+        "assets/figma/Discover page.png"
+      ],
+      "screen_asset_status": {
+        "assets/figma/Discover page.png": "FIGMA 4x: Discover card stack (sample data 'Lily - Husky' is replaced in the rebuild)"
+      },
+      "kicker": "",
+      "title": "When the likes\ngo both ways...",
+      "accent": "both ways...",
+      "sub": "",
+      "purpose": "Tension: Shiro and Tom drift together; the like.",
+      "composition": "Dark ember space: Shiro's coin and Tom's card float toward each other; the heart button hangs below.",
+      "camera": "Very slow push, shallow focus.",
+      "motion": "The two loops pulse on each soft hit and drift closer; the like at 46.38.",
+      "ui_interaction": "Paw-tap the heart on Tom's card.",
+      "vfx": "Warm bokeh; low-key grade.",
+      "transition_in": "Through the tab.",
+      "transition_out": "The loops touch as the drop hits.",
+      "transition_window": [
+        46.878,
+        47.208
+      ],
+      "audio_sync": [
+        {
+          "t": 42.242,
+          "frame": 2535,
+          "event": "breakdown"
+        },
+        {
+          "t": 46.381,
+          "frame": 2783,
+          "event": "like tap"
+        },
+        {
+          "t": 47.208,
+          "frame": 2832,
+          "event": "DROP"
+        }
+      ],
+      "sfx": "One soft tap.",
+      "assets_needed": [],
+      "image_prompt": "Dark cinematic abstract background, 16:9 wide. Near-black warm charcoal space with a soft ember-orange to coral glow behind the centre at about 45% of the height, and a few large soft out-of-focus warm bokeh discs near the edges. Very low-key, velvety, subtle film grain, no hard shapes. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "S11",
+      "act": "7 Match",
+      "start": 47.208,
+      "end": 52.175,
+      "duration": 4.967,
+      "start_frame": 2832,
+      "end_frame": 3130,
+      "frames": 298,
+      "template": "widgets",
+      "image": "assets/film/p06_studio_dark.png",
+      "image_prompt_id": "P06",
+      "screen_asset": [
+        "assets/figma_rebuilt/match@4x.png"
+      ],
+      "screen_asset_status": {
+        "assets/figma_rebuilt/match@4x.png": "REBUILT 4x (source: assets/figma_rebuilt/match.html): the real Figma Discover underneath, dimmed + blurred; the official double-loop; the app's exact strings; app-style pill buttons"
+      },
+      "kicker": "Match",
+      "title": "The vibe\nis mutual.",
+      "accent": "mutual.",
+      "sub": "",
+      "purpose": "The payoff: a mutual match exactly on the drop.",
+      "composition": "The two loops interlock into the double-loop and slam into the real match screen; 'Chat Now' and 'Continue Discovering' slide up as 3D buttons.",
+      "camera": "Fast dolly-out from inside the symbol + 20 deg orbit.",
+      "motion": "Loops interlock on the drop; title 'It's a Match!' and 'Tom liked you back.' on the next beats.",
+      "ui_interaction": "Match overlay appears (real strings).",
+      "vfx": "One light bloom on the interlock; restrained shockwave.",
+      "transition_in": "The loops meet.",
+      "transition_out": "The paw moves to Chat Now.",
+      "transition_window": [
+        51.845,
+        52.175
+      ],
+      "audio_sync": [
+        {
+          "t": 47.208,
+          "frame": 2832,
+          "event": "DROP -> interlock + chime"
+        },
+        {
+          "t": 48.864,
+          "frame": 2932,
+          "event": "buttons"
+        },
+        {
+          "t": 52.175,
+          "frame": 3130,
+          "event": "downbeat -> cut"
+        }
+      ],
+      "sfx": "One match chime.",
+      "assets_needed": [
+        "figma_rebuilt/match@4x.png"
+      ],
+      "image_prompt": "Dark cinematic abstract background, 16:9 wide. Near-black warm charcoal space with a soft ember-orange to coral glow behind the centre at about 45% of the height, and a few large soft out-of-focus warm bokeh discs near the edges. Very low-key, velvety, subtle film grain, no hard shapes. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "S12",
+      "act": "8 Chat",
+      "start": 52.175,
+      "end": 55.486,
+      "duration": 3.311,
+      "start_frame": 3130,
+      "end_frame": 3329,
+      "frames": 199,
+      "template": "widgets",
+      "image": "assets/film/p05_studio_light.png",
+      "image_prompt_id": "P05",
+      "screen_asset": [
+        "assets/figma_rebuilt/match@4x.png",
+        "assets/figma/Messaging page (1).png"
+      ],
+      "screen_asset_status": {
+        "assets/figma_rebuilt/match@4x.png": "REBUILT 4x (source: assets/figma_rebuilt/match.html): the real Figma Discover underneath, dimmed + blurred; the official double-loop; the app's exact strings; app-style pill buttons",
+        "assets/figma/Messaging page (1).png": "FIGMA 4x: conversation (bubbles, Edit/Unsend menu, patterned background); clean state in 'Messaging page.png' (1x)"
+      },
+      "kicker": "Chat",
+      "title": "Say hello.",
+      "accent": "hello.",
+      "sub": "",
+      "purpose": "From match to conversation.",
+      "composition": "The Chat Now button flies to the camera; pressed, it stretches into the chat screen.",
+      "camera": "Push, then the phone turns to 3/4.",
+      "motion": "Press on the downbeat; expand over beat 1-2.",
+      "ui_interaction": "Paw-tap 'Chat Now' -> it expands into the conversation with Tom ('Online').",
+      "vfx": "Soft glow trail.",
+      "transition_in": "Cut on the tap.",
+      "transition_out": "Continuous.",
+      "transition_window": [
+        55.156,
+        55.486
+      ],
+      "audio_sync": [
+        {
+          "t": 52.175,
+          "frame": 3130,
+          "event": "downbeat -> tap"
+        },
+        {
+          "t": 55.486,
+          "frame": 3329,
+          "event": "downbeat"
+        }
+      ],
+      "sfx": "Tap.",
+      "assets_needed": [
+        "Messaging page (1).png"
+      ],
+      "image_prompt": "Empty seamless studio cyclorama background, 16:9 wide, photographic. Warm off-white centre with a soft peach and light coral gradient toward the edges, a very soft barely visible floor line at about 62% of the height, gentle radial glow behind the centre, soft overhead light, smooth and clean with fine film grain. No objects at all. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "S13",
+      "act": "8 Chat",
+      "start": 55.486,
+      "end": 58.797,
+      "duration": 3.311,
+      "start_frame": 3329,
+      "end_frame": 3528,
+      "frames": 199,
+      "template": "widgets",
+      "image": "assets/film/p05_studio_light.png",
+      "image_prompt_id": "P05",
+      "screen_asset": [
+        "assets/figma/Messaging page (1).png"
+      ],
+      "screen_asset_status": {
+        "assets/figma/Messaging page (1).png": "FIGMA 4x: conversation (bubbles, Edit/Unsend menu, patterned background); clean state in 'Messaging page.png' (1x)"
+      },
+      "kicker": "",
+      "title": "",
+      "accent": "",
+      "sub": "",
+      "purpose": "A real conversation: typing, sending, a reply.",
+      "composition": "Side angle along the message thread: the bubbles float off the screen in a line like stepping stones.",
+      "camera": "Lateral track along the bubbles.",
+      "motion": "Type beat 1, send beat 2, dots beat 3, reply beat 4.",
+      "ui_interaction": "The message types into the input; paw-tap send -> the bubble flies into the thread; typing dots; the reply pops in.",
+      "vfx": "Bubbles as soft 3D pills with shadows.",
+      "transition_in": "Continuous.",
+      "transition_out": "Continuous.",
+      "transition_window": [
+        58.467,
+        58.797
+      ],
+      "audio_sync": [
+        {
+          "t": 55.486,
+          "frame": 3329,
+          "event": "type"
+        },
+        {
+          "t": 56.314,
+          "frame": 3379,
+          "event": "send"
+        },
+        {
+          "t": 57.969,
+          "frame": 3478,
+          "event": "reply"
+        }
+      ],
+      "sfx": "Send tick.",
+      "assets_needed": [],
+      "image_prompt": "Empty seamless studio cyclorama background, 16:9 wide, photographic. Warm off-white centre with a soft peach and light coral gradient toward the edges, a very soft barely visible floor line at about 62% of the height, gentle radial glow behind the centre, soft overhead light, smooth and clean with fine film grain. No objects at all. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "S14",
+      "act": "8 Chat",
+      "start": 58.797,
+      "end": 62.108,
+      "duration": 3.311,
+      "start_frame": 3528,
+      "end_frame": 3726,
+      "frames": 198,
+      "template": "widgets",
+      "image": "assets/film/p05_studio_light.png",
+      "image_prompt_id": "P05",
+      "screen_asset": [
+        "assets/figma/Messaging page (1).png"
+      ],
+      "screen_asset_status": {
+        "assets/figma/Messaging page (1).png": "FIGMA 4x: conversation (bubbles, Edit/Unsend menu, patterned background); clean state in 'Messaging page.png' (1x)"
+      },
+      "kicker": "",
+      "title": "From a first hello...",
+      "accent": "",
+      "sub": "",
+      "purpose": "From the app to real life.",
+      "composition": "The last reply bubble lifts toward camera and becomes a window onto the park.",
+      "camera": "Push through the bubble.",
+      "motion": "Bubble lifts, grows, becomes a window.",
+      "ui_interaction": "None.",
+      "vfx": "Glass refraction.",
+      "transition_in": "Continuous.",
+      "transition_out": "Through the window.",
+      "transition_window": [
+        61.778,
+        62.108
+      ],
+      "audio_sync": [
+        {
+          "t": 58.797,
+          "frame": 3528,
+          "event": "downbeat"
+        },
+        {
+          "t": 62.108,
+          "frame": 3726,
+          "event": "downbeat -> cut"
+        }
+      ],
+      "sfx": "None.",
+      "assets_needed": [
+        "P10"
+      ],
+      "image_prompt": "Empty seamless studio cyclorama background, 16:9 wide, photographic. Warm off-white centre with a soft peach and light coral gradient toward the edges, a very soft barely visible floor line at about 62% of the height, gentle radial glow behind the centre, soft overhead light, smooth and clean with fine film grain. No objects at all. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "S15",
+      "act": "9 Together",
+      "start": 62.108,
+      "end": 65.419,
+      "duration": 3.311,
+      "start_frame": 3726,
+      "end_frame": 3925,
+      "frames": 199,
+      "template": "photo",
+      "image": "assets/film/p10_friendship.png",
+      "image_prompt_id": "P10",
+      "screen_asset": null,
+      "screen_asset_status": null,
+      "kicker": "",
+      "title": "...to a real-life\nfriendship.",
+      "accent": "real-life friendship.",
+      "sub": "",
+      "purpose": "The match becomes a real friendship.",
+      "composition": "Shiro and Tom playing in the right 60%; headline left.",
+      "camera": "2.5D push with parallax.",
+      "motion": "Tag type.",
+      "ui_interaction": "None.",
+      "vfx": "The two loop-lines circle the dogs once like a leash of light.",
+      "transition_in": "Through the window.",
+      "transition_out": "Swipe cut.",
+      "transition_window": [
+        65.089,
+        65.419
+      ],
+      "audio_sync": [
+        {
+          "t": 62.108,
+          "frame": 3726,
+          "event": "downbeat"
+        },
+        {
+          "t": 65.419,
+          "frame": 3925,
+          "event": "downbeat -> cut"
+        }
+      ],
+      "sfx": "None.",
+      "assets_needed": [
+        "P10 at 16:9"
+      ],
+      "image_prompt": "Heart-warming cinematic photograph, 16:9 wide frame. Shiro, a young adult cream Shiba Inu: pale cream-white coat with faint warm-biscuit shading on the ears and back, cream urajiro cheeks, small upright triangular ears, dark almond-shaped eyes, black nose and lips, tightly curled tail over the back, wearing a slim glossy red leather collar (#E8102E) with a small round brushed-gold tag in a playful play-bow and Tom, a young adult golden retriever: medium-gold wavy coat with lighter feathering on ears, chest and legs, friendly dark-brown eyes, black nose, wearing a forest-green flat fabric collar (no tag text) bounding in, the two dogs facing each other and playing on short grass in a park, both in the right 60% of the frame. Golden-hour backlight, a soft lens flare from the upper right, warm autumn-gold trees in creamy bokeh, 35 mm lens at dog eye level, f/2.8. The left third is open soft park and sky with little detail. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "S16",
+      "act": "9 Together",
+      "start": 65.419,
+      "end": 72.041,
+      "duration": 6.622,
+      "start_frame": 3925,
+      "end_frame": 4322,
+      "frames": 397,
+      "template": "widgets",
+      "image": "assets/film/p05_studio_light.png",
+      "image_prompt_id": "P05",
+      "screen_asset": [
+        "assets/figma/Create Pet Profile Page 01 (1).png",
+        "assets/figma/Discover page.png",
+        "assets/figma/Feed page.png",
+        "assets/figma_rebuilt/match@4x.png",
+        "assets/figma/Messaging page (1).png",
+        "assets/figma/Manage Pet Profile.png"
+      ],
+      "screen_asset_status": {
+        "assets/figma/Create Pet Profile Page 01 (1).png": "FIGMA 4x: current version ('Build Your Pet's Spotlight!', matches app code). Scroll parts: 'Create Pet Profile Page 02.png' (1x), 'Create Pet Profile Page 03.png' (4x)",
+        "assets/figma/Discover page.png": "FIGMA 4x: Discover card stack (sample data 'Lily - Husky' is replaced in the rebuild)",
+        "assets/figma/Feed page.png": "FIGMA 4x: Feed (Liked pill, Follow, rail); 'Following' + 'Matched' tag states in 'Discover page (1).png' (2x, misnamed)",
+        "assets/figma_rebuilt/match@4x.png": "REBUILT 4x (source: assets/figma_rebuilt/match.html): the real Figma Discover underneath, dimmed + blurred; the official double-loop; the app's exact strings; app-style pill buttons",
+        "assets/figma/Messaging page (1).png": "FIGMA 4x: conversation (bubbles, Edit/Unsend menu, patterned background); clean state in 'Messaging page.png' (1x)",
+        "assets/figma/Manage Pet Profile.png": "FIGMA 1x: your own pet's profile (Likes / Followers / Following / Matches counters)"
+      },
+      "kicker": "",
+      "title": "Discover.\nConnect.\nBelong.",
+      "accent": "Belong.",
+      "sub": "",
+      "purpose": "Everything you just did, in one place.",
+      "composition": "Every widget used in the film (Login button, location card, traits chips, Discover card, the post, the match symbol, chat bubbles) orbits the phone like a solar system; the two loop-lines braid through them.",
+      "camera": "Slow crane up and around (overhead orbit), then a fast push into the phone.",
+      "motion": "Widgets join on the beats; collapse into the phone on the last beat.",
+      "ui_interaction": "Each widget gives one last tiny reaction as it passes the camera (a chip lights, a heart fills).",
+      "vfx": "Glossy loop-lines with shadows.",
+      "transition_in": "Swipe cut.",
+      "transition_out": "The two lines leave the phone for the logo.",
+      "transition_window": [
+        71.711,
+        72.041
+      ],
+      "audio_sync": [
+        {
+          "t": 65.419,
+          "frame": 3925,
+          "event": "downbeat"
+        },
+        {
+          "t": 68.73,
+          "frame": 4124,
+          "event": "downbeat"
+        },
+        {
+          "t": 72.041,
+          "frame": 4322,
+          "event": "final hit"
+        }
+      ],
+      "sfx": "None.",
+      "assets_needed": [],
+      "image_prompt": "Empty seamless studio cyclorama background, 16:9 wide, photographic. Warm off-white centre with a soft peach and light coral gradient toward the edges, a very soft barely visible floor line at about 62% of the height, gentle radial glow behind the centre, soft overhead light, smooth and clean with fine film grain. No objects at all. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "S17",
+      "act": "9 Together",
+      "start": 72.041,
+      "end": 76.138,
+      "duration": 4.097,
+      "start_frame": 4322,
+      "end_frame": 4568,
+      "frames": 246,
+      "template": "endcard",
+      "image": "assets/film/p11_endcard_bg.png",
+      "image_prompt_id": "P11",
+      "screen_asset": null,
+      "screen_asset_status": null,
+      "kicker": "",
+      "title": "MeetMyPets.",
+      "accent": "Pets.",
+      "sub": "Their social life starts here.",
+      "badges": [
+        "Coming soon"
+      ],
+      "purpose": "A clear, memorable brand frame.",
+      "composition": "Woven logo centred, wordmark, tagline, 'Coming soon'.",
+      "camera": "Locked.",
+      "motion": "The two lines pull tight into the woven logo on the final hit; wordmark, tagline, pill on the next beats; hold to the end.",
+      "ui_interaction": "None.",
+      "vfx": "Soft bloom on the mark only.",
+      "transition_in": "The lines arrive.",
+      "transition_out": "None: the last frame is the brand frame.",
+      "transition_window": [
+        75.808,
+        76.138
+      ],
+      "audio_sync": [
+        {
+          "t": 72.041,
+          "frame": 4322,
+          "event": "final hit"
+        },
+        {
+          "t": 74.84,
+          "frame": 4490,
+          "event": "music gone"
+        },
+        {
+          "t": 76.138,
+          "frame": 4568,
+          "event": "end"
+        }
+      ],
+      "sfx": "None.",
+      "assets_needed": [
+        "mmp_mark_film.svg"
+      ],
+      "image_prompt": "Empty seamless studio backdrop, 16:9 wide, photographic, ultra clean. Warm off-white centre softly fading to pale peach at the edges, a faint warm glow behind the upper-middle of the frame, very subtle vignette, fine film grain, no objects, no shapes. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    }
+  ],
+  "image_prompts": [
+    {
+      "id": "P01",
+      "filename": "assets/film/p01_eye_macro.png",
+      "shots": [
+        "S01"
+      ],
+      "type": "pet photograph (background plate)",
+      "aspect_ratio": "16:9 (generate 3840x2160, or the model's largest 16:9 size, then upscale)",
+      "prompt": "Extreme macro photograph of the left eye of Shiro, a young adult cream Shiba Inu: pale cream-white coat with faint warm-biscuit shading on the ears and back, cream urajiro cheeks, small upright triangular ears, dark almond-shaped eyes, black nose and lips, tightly curled tail over the back, wearing a slim glossy red leather collar (#E8102E) with a small round brushed-gold tag. 16:9 wide frame. The eye sits in the right third of the frame, slightly above the middle; lashes and cream fur in razor-sharp detail around it, the left half of the frame falling into soft creamy out-of-focus fur. Warm late-afternoon sunlight from the right, a single round catchlight in the dark brown iris, honey and ember tones, cinematic colour grade, 100 mm macro lens at f/2.8. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "P02",
+      "filename": "assets/film/p02_doorstep.png",
+      "shots": [
+        "S02"
+      ],
+      "type": "pet photograph (background plate)",
+      "aspect_ratio": "16:9 (generate 3840x2160, or the model's largest 16:9 size, then upscale)",
+      "prompt": "Cinematic photograph, 16:9 wide frame. Shiro, a young adult cream Shiba Inu: pale cream-white coat with faint warm-biscuit shading on the ears and back, cream urajiro cheeks, small upright triangular ears, dark almond-shaped eyes, black nose and lips, tightly curled tail over the back, wearing a slim glossy red leather collar (#E8102E) with a small round brushed-gold tag, standing on a warm stone doorstep in the left third of the frame, head turned toward a quiet tree-lined residential street that recedes to a soft vanishing point right of centre. Low camera at dog eye height, 35 mm lens, f/2.8, golden-hour backlight down the street, warm haze, soft rim light on the cream fur. The upper right of the frame is calm sky and blurred foliage with little detail. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "P03",
+      "filename": "assets/film/p03_brand_gradient.png",
+      "shots": [
+        "S03"
+      ],
+      "type": "3D render (background plate)",
+      "aspect_ratio": "16:9 (generate 3840x2160, or the model's largest 16:9 size, then upscale) (your 9:16 version also works: it is a plain gradient)",
+      "prompt": "Empty seamless studio backdrop, 16:9 wide, photographic, ultra clean. Smooth gradient from warm coral-pink at the top to soft orange at the bottom, a gentle lighter glow behind the centre at about 40% of the height, soft large overhead light, very fine film grain, no objects, no shapes, nothing in frame. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "P04",
+      "filename": "assets/film/p04_phone_plate.png",
+      "shots": [
+        "S04"
+      ],
+      "type": "phone plate (optional fallback for a CG phone)",
+      "aspect_ratio": "16:9 (generate 3840x2160, or the model's largest 16:9 size, then upscale)",
+      "prompt": "Studio product photograph, 16:9 wide, of a modern unbranded smartphone standing upright, rotated about 18 degrees to the left in a three-quarter view, standing in the right third of the frame and about 70% of its height. Thin black bezels, rounded corners, polished warm-silver aluminium frame, small centred punch-hole camera. The screen is a perfectly flat uniform chroma green (#00B140) with no reflections and no glare. Seamless warm off-white to soft peach studio sweep, large soft key light from the upper left, thin rim light on the metal edge, soft contact shadow and faint floor reflection. Left half of the frame clean. No brand logos anywhere. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "P05",
+      "filename": "assets/film/p05_studio_light.png",
+      "shots": [
+        "S04",
+        "S05",
+        "S06",
+        "S07",
+        "S08",
+        "S09",
+        "S10",
+        "S11",
+        "S12",
+        "S13",
+        "S16",
+        "S17",
+        "S18",
+        "S20"
+      ],
+      "type": "background plate (reused environment)",
+      "aspect_ratio": "16:9 (generate 3840x2160, or the model's largest 16:9 size, then upscale)",
+      "prompt": "Empty seamless studio cyclorama background, 16:9 wide, photographic. Warm off-white centre with a soft peach and light coral gradient toward the edges, a very soft barely visible floor line at about 62% of the height, gentle radial glow behind the centre, soft overhead light, smooth and clean with fine film grain. No objects at all. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "P06",
+      "filename": "assets/film/p06_studio_dark.png",
+      "shots": [
+        "S14",
+        "S15"
+      ],
+      "type": "background plate",
+      "aspect_ratio": "16:9 (generate 3840x2160, or the model's largest 16:9 size, then upscale)",
+      "prompt": "Dark cinematic abstract background, 16:9 wide. Near-black warm charcoal space with a soft ember-orange to coral glow behind the centre at about 45% of the height, and a few large soft out-of-focus warm bokeh discs near the edges. Very low-key, velvety, subtle film grain, no hard shapes. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "P07",
+      "filename": "assets/film/p07_shiro_avatar.png",
+      "shots": [
+        "S05",
+        "S07",
+        "S08",
+        "S14"
+      ],
+      "type": "pet photograph (in-app avatar)",
+      "aspect_ratio": "1:1 (2048x2048)",
+      "prompt": "Studio portrait photograph, square 1:1, of Shiro, a young adult cream Shiba Inu: pale cream-white coat with faint warm-biscuit shading on the ears and back, cream urajiro cheeks, small upright triangular ears, dark almond-shaped eyes, black nose and lips, tightly curled tail over the back, wearing a slim glossy red leather collar (#E8102E) with a small round brushed-gold tag. Head and shoulders, face centred, looking straight at the camera with a happy relaxed expression, mouth slightly open, red collar and gold tag visible. Plain evenly lit soft warm-peach seamless background. Soft warm daylight, catchlights in both eyes, 85 mm lens, f/4, crisp fur detail. The whole head fits within a centred circle. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "P08",
+      "filename": "assets/film/p08_tom_card.png",
+      "shots": [
+        "S09",
+        "S10",
+        "S14",
+        "S15"
+      ],
+      "type": "pet photograph (in-app Discover card)",
+      "aspect_ratio": "3:4 (1536x2048)",
+      "prompt": "Photograph, 3:4 portrait, of Tom, a young adult golden retriever: medium-gold wavy coat with lighter feathering on ears, chest and legs, friendly dark-brown eyes, black nose, wearing a forest-green flat fabric collar (no tag text), sitting on grass in a sunny park, head tilted slightly, tongue out, friendly expression, body three-quarter to camera with the head in the upper third. Soft warm afternoon light, green and gold creamy bokeh background, 70 mm lens, f/2.8. Upper-left area and bottom quarter are calm and low-detail. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "P09",
+      "filename": "assets/film/p09_tom_post.png",
+      "shots": [
+        "S10",
+        "S11",
+        "S12"
+      ],
+      "type": "pet photograph (in-app Feed post)",
+      "aspect_ratio": "2:3 (1600x2400)",
+      "prompt": "Joyful photograph, 2:3 portrait, of Tom, a young adult golden retriever: medium-gold wavy coat with lighter feathering on ears, chest and legs, friendly dark-brown eyes, black nose, wearing a forest-green flat fabric collar (no tag text), running happily toward the camera through a meadow of small yellow wildflowers, mouth open, ears bouncing, low angle at dog height, 50 mm lens, f/2.8, fast shutter. Bright late-morning backlight through the flowers, warm and fresh. Bottom fifth and the right edge are softer and calmer. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "P10",
+      "filename": "assets/film/p10_friendship.png",
+      "shots": [
+        "S18",
+        "S19"
+      ],
+      "type": "pet photograph (background plate)",
+      "aspect_ratio": "16:9 (generate 3840x2160, or the model's largest 16:9 size, then upscale)",
+      "prompt": "Heart-warming cinematic photograph, 16:9 wide frame. Shiro, a young adult cream Shiba Inu: pale cream-white coat with faint warm-biscuit shading on the ears and back, cream urajiro cheeks, small upright triangular ears, dark almond-shaped eyes, black nose and lips, tightly curled tail over the back, wearing a slim glossy red leather collar (#E8102E) with a small round brushed-gold tag in a playful play-bow and Tom, a young adult golden retriever: medium-gold wavy coat with lighter feathering on ears, chest and legs, friendly dark-brown eyes, black nose, wearing a forest-green flat fabric collar (no tag text) bounding in, the two dogs facing each other and playing on short grass in a park, both in the right 60% of the frame. Golden-hour backlight, a soft lens flare from the upper right, warm autumn-gold trees in creamy bokeh, 35 mm lens at dog eye level, f/2.8. The left third is open soft park and sky with little detail. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    },
+    {
+      "id": "P11",
+      "filename": "assets/film/p11_endcard_bg.png",
+      "shots": [
+        "S21"
+      ],
+      "type": "3D render (background plate)",
+      "aspect_ratio": "16:9 (generate 3840x2160, or the model's largest 16:9 size, then upscale)",
+      "prompt": "Empty seamless studio backdrop, 16:9 wide, photographic, ultra clean. Warm off-white centre softly fading to pale peach at the edges, a faint warm glow behind the upper-middle of the frame, very subtle vignette, fine film grain, no objects, no shapes. No text, no letters, no numbers, no logos, no watermark, no user interface, no phone unless described. Photorealistic, natural anatomy, correct number of legs and ears, no distortion."
+    }
+  ]
+}
